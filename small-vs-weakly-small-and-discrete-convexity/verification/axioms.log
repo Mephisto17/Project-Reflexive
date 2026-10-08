@@ -1,0 +1,23 @@
+'TalagrandIntegral.maximal_truncation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TalagrandIntegral.fixed_cardinality_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TalagrandIntegral.multiscale_selector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TalagrandIntegral.mean_selector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TalagrandIntegral.fractional_to_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TalagrandIntegral.comparison_theorem_1_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TalagrandIntegral.integralThreshold_isGreatest' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TalagrandIntegral.fractionalThreshold_isGreatest' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TalagrandConjectures.li_weaklySmall_badTwo_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TalagrandIntegral.integral_two_unions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TalagrandIntegral.discrete_convexity_proposition_3_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TalagrandIntegral.discrete_convexity_theorem_1_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+TalagrandIntegral.fractional_to_integral {X : Type} [Fintype X] [DecidableEq X] {r : ℝ} (hr : 0 ≤ r)
+  {F : Finset (Finset X)} {g : Finset X → ℝ} (hg : TalagrandIntegral.FractionalCover r F g) :
+  TalagrandIntegral.Small (r / TalagrandIntegral.comparisonConstant) F
+TalagrandIntegral.comparison_theorem_1_1 {X : Type} [Fintype X] [DecidableEq X] {F : Finset (Finset X)} (hF : ∅ ∉ F) :
+  TalagrandIntegral.fractionalThreshold F ≤ TalagrandIntegral.comparisonConstant * TalagrandIntegral.integralThreshold F
+TalagrandIntegral.integral_two_unions {X : Type} [Fintype X] [DecidableEq X] {p : ℝ} (hp : 0 < p) (hp1 : p < 1)
+  (A : Set (TalagrandConjectures.Cube X)) (hm : 1 / 2 ≤ TalagrandConjectures.measure p A) :
+  TalagrandIntegral.IntegralSmall (p / (50 * 512 ^ 4)) (TalagrandConjectures.badTwo A)
+TalagrandIntegral.discrete_convexity_theorem_1_1 {X : Type} [Fintype X] [DecidableEq X] {p : ℝ} (hp : 0 < p)
+  (hp1 : p < 1) (D : Set (TalagrandConjectures.Cube X)) (hD : 1 - 1 / 2 ^ 75 ≤ TalagrandConjectures.measure p D) :
+  TalagrandIntegral.IntegralSmall p (TalagrandConjectures.badUnions (2 ^ 75) D)

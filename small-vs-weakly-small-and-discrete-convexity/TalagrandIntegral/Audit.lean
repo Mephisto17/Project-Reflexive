@@ -1,0 +1,24 @@
+import TalagrandIntegral.Thresholds
+import TalagrandIntegral.DiscreteConvexity
+
+set_option autoImplicit false
+set_option pp.fullNames true
+
+-- Kernel axiom audit. Only propext, Classical.choice and Quot.sound are expected.
+#print axioms TalagrandIntegral.maximal_truncation
+#print axioms TalagrandIntegral.fixed_cardinality_count
+#print axioms TalagrandIntegral.multiscale_selector
+#print axioms TalagrandIntegral.mean_selector
+#print axioms TalagrandIntegral.fractional_to_integral
+#print axioms TalagrandIntegral.comparison_theorem_1_1
+#print axioms TalagrandIntegral.integralThreshold_isGreatest
+#print axioms TalagrandIntegral.fractionalThreshold_isGreatest
+#print axioms TalagrandConjectures.li_weaklySmall_badTwo_half
+#print axioms TalagrandIntegral.integral_two_unions
+#print axioms TalagrandIntegral.discrete_convexity_proposition_3_1
+#print axioms TalagrandIntegral.discrete_convexity_theorem_1_1
+
+#check TalagrandIntegral.fractional_to_integral
+#check TalagrandIntegral.comparison_theorem_1_1
+#check TalagrandIntegral.integral_two_unions
+#check TalagrandIntegral.discrete_convexity_theorem_1_1

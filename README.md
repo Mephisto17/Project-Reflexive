@@ -1,4 +1,4 @@
-# Talagrand Lean Verifications
+# Project Reflexive — Talagrand Lean Verifications
 
 This repository collects Lean formalizations and verification artifacts for Talagrand-related theorems and conjectures. Each result lives in an independent project directory with its sources, dependency pins, mathematical scope, and verification records.
 
@@ -38,28 +38,41 @@ The third project is [talagrand-five-conjectures/](talagrand-five-conjectures/).
 - [verification/](talagrand-five-conjectures/verification/): build, axiom, result, source, and article records.
 
 The project records the exact interpretation of Conjectures 9.1, 7.12, 7.9, 7.3, and 7.2 in its own README. Its theorem and supporting-result names are preserved as Lean declarations; the supplied verification reports document the proof dependencies.
+
+### Small versus weakly small, and Talagrand's discrete-convexity conjecture
+
+The project is in **[small-vs-weakly-small-and-discrete-convexity/](small-vs-weakly-small-and-discrete-convexity/)**. It groups the two related results in one independent Lean project, with the shared dependencies needed by their proofs.
+
+- [Project README: statements and proof scope](small-vs-weakly-small-and-discrete-convexity/README.md)
+- [Standalone Lean verification](small-vs-weakly-small-and-discrete-convexity/Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean)
+- [TalagrandIntegral modules](small-vs-weakly-small-and-discrete-convexity/TalagrandIntegral/)
+- [Supporting fractional-certificate modules](small-vs-weakly-small-and-discrete-convexity/TalagrandConjectures/)
+- [Verification logs, axiom reports, source profile, and SHA-256 checksums](small-vs-weakly-small-and-discrete-convexity/verification/)
+
+The main declarations are `TalagrandIntegral.comparison_theorem_1_1` (comparison constant `25 * 512^4`) and `TalagrandIntegral.discrete_convexity_theorem_1_1` (`k = 2^75`). The package also contains the budget-preserving rounding result, threshold-maximizer statements, and two-union corollary. The discrete-convexity proof uses the comparison theorem, Li's fractional certificate, and finite probability couplings. Its README identifies the original paper arguments that are not formalized.
+
+The project pins Lean 4.32.0 and mathlib commit `81a5d257c8e410db227a6665ed08f64fea08e997`. The original filenames, including `Convexty` in the supplied standalone filename, are preserved so the build scripts and checksum manifest stay consistent. The supplied logs are retained unchanged; adding this project to the repository is not a fresh Lean compilation.
+
 ## Repository layout
 
 ```text
-talagrand-lean-verifications/
+Project-Reflexive/
 ├── README.md
 ├── Kahn-Kalai/
-│   ├── README.md
-│   ├── MIGRATION.md
-│   ├── LICENSE
-│   ├── KahnKalaiVerified.lean
-│   ├── KahnKalai.lean, Paper.lean, Solution.lean, Audit.lean
-│   ├── KahnKalai/
-│   ├── verification/
-│   ├── lakefile.toml, lake-manifest.json, lean-toolchain
-│   └── verify.sh
+│   ├── KahnKalai/, verification/
+│   └── Lean sources, project README, license, and Lake configuration
 ├── talagrand-conjecture-5-7/
-└── talagrand-five-conjectures/
+│   ├── TalagrandSelector/, verification/, scripts/
+│   └── TalagrandConjecture57.lean and project configuration
+├── talagrand-five-conjectures/
+│   ├── TalagrandConjectures/, verification/, scripts/
+│   └── TalagrandFiveConjectures.lean and project configuration
+└── small-vs-weakly-small-and-discrete-convexity/
     ├── README.md
-    ├── TalagrandConjecture57.lean, TalagrandSelector.lean, Audit.lean
-    ├── TalagrandSelector/
-    ├── verification/
-    ├── scripts/
+    ├── Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean
+    ├── TalagrandIntegral.lean
+    ├── TalagrandIntegral/, TalagrandConjectures/
+    ├── verification/, scripts/
     └── lakefile.toml, lake-manifest.json, lean-toolchain
 ```
 
@@ -97,6 +110,14 @@ lake env lean Audit.lean
 lake env lean TalagrandFiveConjectures.lean
 ~~~
 
+Small versus weakly small and discrete convexity (Python 3 and a POSIX shell are required):
+
+```sh
+cd small-vs-weakly-small-and-discrete-convexity
+lake exe cache get Mathlib.Tactic Mathlib.Analysis.MeanInequalities Mathlib.Analysis.SpecialFunctions.Pow.Real Mathlib.Analysis.SpecialFunctions.Log.Basic Mathlib.Topology.Order.Compact Mathlib.Data.Fintype.Perm Mathlib.Analysis.SpecificLimits.Normed Mathlib.Analysis.Complex.ExponentialBounds
+sh scripts/verify.sh
+```
+
 The standalone file and modular library in each project define the same names. Check them separately rather than importing both into one Lean file. The records under `verification/` are supplied build evidence; rerun the checks after editing proofs. The directory migration itself does not constitute a fresh Lean compilation.
 
 ## Path migration and existing links
@@ -110,8 +131,8 @@ See the **[complete old-to-new path map](Kahn-Kalai/MIGRATION.md)** for updated 
 Create one top-level directory per theorem or conjecture. Include its own README, Lean sources, Lake configuration, toolchain pin, verification records, and applicable license/attribution information. Then add it to the project list above.
 
 ```sh
-git clone https://github.com/Mephisto17/talagrand-lean-verifications.git
-cd talagrand-lean-verifications
+git clone https://github.com/Mephisto17/Project-Reflexive.git
+cd Project-Reflexive
 mkdir talagrand-new-result
 # Add the complete project under talagrand-new-result/.
 # Update this README with links and reproduction commands.

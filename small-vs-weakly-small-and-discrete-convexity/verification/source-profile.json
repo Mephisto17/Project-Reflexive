@@ -1,0 +1,150 @@
+{
+  "project": "Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture",
+  "lean_toolchain": "leanprover/lean4:v4.32.0",
+  "lean_commit": "8c9756b28d64dab099da31a4c09229a9e6a2ef35",
+  "mathlib_commit": "81a5d257c8e410db227a6665ed08f64fea08e997",
+  "source_modules": [
+    "TalagrandIntegral.Imports",
+    "TalagrandIntegral.Truncation",
+    "TalagrandIntegral.Basic",
+    "TalagrandIntegral.Colorings",
+    "TalagrandIntegral.Reconstruction",
+    "TalagrandIntegral.Counting",
+    "TalagrandIntegral.Probabilities",
+    "TalagrandIntegral.Selector",
+    "TalagrandIntegral.MeanColor",
+    "TalagrandIntegral.Scales",
+    "TalagrandIntegral.Weights",
+    "TalagrandIntegral.Polynomial",
+    "TalagrandIntegral.Expectation",
+    "TalagrandIntegral.Comparison",
+    "TalagrandIntegral.Thresholds",
+    "TalagrandConjectures.Basic",
+    "TalagrandConjectures.Fourier",
+    "TalagrandConjectures.Extrapolation",
+    "TalagrandConjectures.Energy",
+    "TalagrandConjectures.Logarithmic",
+    "TalagrandConjectures.Certificates",
+    "TalagrandConjectures.Unions",
+    "TalagrandConjectures.Li",
+    "TalagrandIntegral.CubeBridge",
+    "TalagrandIntegral.FiniteProbability",
+    "TalagrandIntegral.Couplings",
+    "TalagrandIntegral.Grouping",
+    "TalagrandIntegral.DiscreteConvexity",
+    "TalagrandIntegral.Audit",
+    "TalagrandIntegral"
+  ],
+  "mathlib_imports": [
+    "Mathlib.Tactic",
+    "Mathlib.Analysis.MeanInequalities",
+    "Mathlib.Analysis.SpecialFunctions.Pow.Real",
+    "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+    "Mathlib.Topology.Order.Compact",
+    "Mathlib.Data.Fintype.Perm",
+    "Mathlib.Analysis.SpecificLimits.Normed",
+    "Mathlib.Analysis.Complex.ExponentialBounds"
+  ],
+  "proof_scope": "Main results, comparison selector and truncation lemma, threshold maxima, two-union corollary, and discrete Proposition 3.1. The discrete theorem uses an alternative proof via comparison and Li.",
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "source_pdfs": [
+    {
+      "filename": "small-vs-weakly-small.pdf",
+      "sha256": "0c02b128253cb6e07f23931992bf377e8dd74c032572143878b1821cdcd32f39"
+    },
+    {
+      "filename": "Talagrand-discrete-convexity-conjecture.pdf",
+      "sha256": "217afc1b8177a802016efa7fe14038b86fa593cb0da2ebbd679e09806422479e"
+    }
+  ],
+  "lean_version_output": "Lean (version 4.32.0, x86_64-unknown-linux-gnu, commit 8c9756b28d64dab099da31a4c09229a9e6a2ef35, Release)",
+  "verification": {
+    "module_build": "passed",
+    "standalone_build": "passed",
+    "source_placeholder_audit": "passed",
+    "axiom_audit": "passed",
+    "audited_declarations": 12,
+    "proof_placeholders": 0,
+    "custom_axioms": 0,
+    "logs": [
+      "verification/build.log",
+      "verification/axioms.log",
+      "verification/standalone.log",
+      "verification/verification-run.log"
+    ]
+  },
+  "standalone": {
+    "filename": "Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean",
+    "lines": 3382,
+    "bytes": 147616,
+    "sha256": "6ed70feffb1762ab269004c8e740c2b78e829c91da80af5b4363aa1afa06e18f"
+  },
+  "axiom_reports": {
+    "TalagrandIntegral.maximal_truncation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TalagrandIntegral.fixed_cardinality_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TalagrandIntegral.multiscale_selector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TalagrandIntegral.mean_selector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TalagrandIntegral.fractional_to_integral": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TalagrandIntegral.comparison_theorem_1_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TalagrandIntegral.integralThreshold_isGreatest": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TalagrandIntegral.fractionalThreshold_isGreatest": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TalagrandConjectures.li_weaklySmall_badTwo_half": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TalagrandIntegral.integral_two_unions": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TalagrandIntegral.discrete_convexity_proposition_3_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TalagrandIntegral.discrete_convexity_theorem_1_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "archive_filename": "Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.zip",
+  "description": "Lean verification of Talagrand's small-versus-weakly-small and discrete-convexity conjectures."
+}

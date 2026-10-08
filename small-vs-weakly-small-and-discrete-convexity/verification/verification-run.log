@@ -1,0 +1,4 @@
+Source audit passed: 31 Lean files.
+Axiom audit passed for 12 declarations; only the three standard Lean axioms occur.
+Axiom audit passed for 12 declarations; only the three standard Lean axioms occur.
+Module build, standalone build, and axiom audit succeeded.

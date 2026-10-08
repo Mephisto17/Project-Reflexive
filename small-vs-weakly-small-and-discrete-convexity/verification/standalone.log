@@ -1,0 +1,498 @@
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:91:18: warning: Variable name `hd1` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:160:0: warning: automatically included section variable(s) unused in theorem `TalagrandIntegral.Small.mono_family`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:165:0: warning: automatically included section variable(s) unused in theorem `TalagrandIntegral.Small.mono_density`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:173:0: warning: automatically included section variable(s) unused in theorem `TalagrandIntegral.small_empty`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:178:0: warning: automatically included section variable(s) unused in theorem `TalagrandIntegral.productMass_nonneg`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:238:0: warning: automatically included section variable(s) unused in theorem `TalagrandIntegral.delay_le`:
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:263:53: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:273:53: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:276:47: warning: Variable name `hza` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:361:4: warning: Try `simp at hx` instead of `simpa using hx`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:454:0: warning: automatically included section variable(s) unused in theorem `TalagrandIntegral.crossings_card_word`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:522:30: warning: This simp argument is unused:
+  div_div
+
+Hint: Omit it from the simp argument list.
+  simp [deficit, moveCut,̵ ̵d̵i̵v̵_̵d̵i̵v̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:571:0: warning: automatically included section variable(s) unused in theorem `TalagrandIntegral.mass_moveWord`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:579:12: warning: This simp argument is unused:
+  hx
+
+Hint: Omit it from the simp argument list.
+  simp [hx̵,̵ ̵h̵e]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:601:4: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:890:76: warning: This simp argument is unused:
+  zero_add
+
+Hint: Omit it from the simp argument list.
+  simp only [Nat.add_eq_zero_iff, Nat.one_ne_zero, and_false, ↓reduceIte, z̵e̵r̵o̵_̵add,̵ ̵a̵d̵d̵_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:969:0: warning: automatically included section variable(s) unused in theorem `TalagrandIntegral.meanColor_le_two`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1132:0: warning: automatically included section variable(s) unused in theorem `TalagrandIntegral.mem_nonemptySubsets`:
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1135:0: warning: automatically included section variable(s) unused in theorem `TalagrandIntegral.rawWeights_nonneg`:
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1234:0: warning: automatically included section variable(s) unused in theorem `TalagrandIntegral.prod_colorY_ge_one`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1414:0: warning: automatically included section variable(s) unused in theorem `TalagrandIntegral.small_zero_of_empty_not_mem`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1513:0: warning: automatically included section variable(s) unused in theorem `TalagrandIntegral.integral_parameters_compact`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1529:0: warning: automatically included section variable(s) unused in theorem `TalagrandIntegral.fractional_parameters_compact`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1600:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.Up.compl`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1603:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.Down.compl`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1625:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.mass_nonneg`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1627:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.mass_pos`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1638:8: warning: This simp argument is unused:
+  Fintype.sum_bool
+
+Hint: Omit it from the simp argument list.
+  simp [̵F̵i̵n̵t̵y̵p̵e̵.̵s̵u̵m̵_̵b̵o̵o̵l̵,̵ ̵b̵i̵t̵,̵[̲b̲i̲t̲,̲ add_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1664:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.ind_nonneg`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1666:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.ind_le_one`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1673:46: warning: Variable name `x` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1675:45: warning: Variable name `x` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1676:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.ind_compl`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1688:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.monoWeight_bot`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1690:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.monoWeight_nonneg`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1693:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.monoWeight_pos`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1696:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.monoWeight_mul`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1701:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.monoWeight_le_one`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1739:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1747:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.basis_bot`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1760:8: warning: This simp argument is unused:
+  Fintype.sum_bool
+
+Hint: Omit it from the simp argument list.
+  simp [F̵i̵n̵t̵y̵p̵e̵.̵s̵u̵m̵_̵b̵o̵o̵l̵,̵ ̵add_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1828:75: warning: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1828:75: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1855:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.zmean`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1860:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1862:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.zvariance`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1872:4: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1874:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.diagonal_weight`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:1882:52: warning: This simp argument is unused:
+  monoWeight
+
+Hint: Omit it from the simp argument list.
+  simp_all [m̵o̵n̵o̵W̵e̵i̵g̵h̵t̵,̵ ̵Bool.le_iff_imp]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2045:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.monoWeight_le_self`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2078:39: warning: This simp argument is unused:
+  Finset.sum_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [energy, Finset.mul_sum, F̵i̵n̵s̵e̵t̵.̵s̵u̵m̵_̵m̵u̵l̵,̵ ̵mul_ite, mul_zero, ite_mul, zero_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2078:74: warning: This simp argument is unused:
+  ite_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [energy, Finset.mul_sum, Finset.sum_mul, mul_ite, mul_zero, i̵t̵e̵_̵m̵u̵l̵,̵ ̵zero_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2078:83: warning: This simp argument is unused:
+  zero_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [energy, Finset.mul_sum, Finset.sum_mul, mul_ite, mul_zero, ite_mul,̵ ̵z̵e̵r̵o̵_̵m̵u̵l̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2145:42: warning: This simp argument is unused:
+  mul_div_assoc
+
+Hint: Omit it from the simp argument list.
+  simp only [mul_add, mul_sub, mul_one, m̵u̵l̵_̵d̵i̵v̵_̵a̵s̵s̵o̵c̵,̵Finset.sum_add_distrib, Finset.sum_sub_distrib,
+  ̲  ̲ ̲ ̲ ̲ ̲← Finset.sum_div, ← Finset.sum_mul, ν.total, one_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2146:54: warning: This simp argument is unused:
+  ← Finset.sum_div
+
+Hint: Omit it from the simp argument list.
+  simp only [mul_add, mul_sub, mul_one, mul_div_assoc, Finset.sum_add_distrib,
+  ̲  ̲ ̲ ̲ ̲ ̲Finset.sum_sub_distrib, ← F̵i̵n̵s̵e̵t̵.̵s̵u̵m̵_̵d̵i̵v̵,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵←̵ ̵Finset.sum_mul, ν.total, one_mul]
+
+Note: Simp arguments with `←` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `←` with `-` to only get that effect and silence this warning.
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2185:40: warning: Variable name `hp1` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2189:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2278:10: warning: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2278:10: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2265:4: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2418:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.flip_flip`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2489:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.downClosure_down`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2492:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.subset_downClosure`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2502:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.badTwo_subset_downClosure`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2518:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.badFour_subset_badTwo`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2565:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.chi_liCoord`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2568:43: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2586:21: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2588:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.liCoord_zero`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2647:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.monoWeight_neg_lower`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2668:31: warning: This simp argument is unused:
+  if_neg hi
+
+Hint: Omit it from the simp argument list.
+  simp only [if_pos hij, i̵f̵_̵n̵e̵g̵ ̵h̵i̵,̵ ̵liLambda_eq_beta]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2689:62: warning: This simp argument is unused:
+  ite_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [highEnergy, Finset.mul_sum, mul_ite, mul_zero, i̵t̵e̵_̵m̵u̵l̵,̵ ̵zero_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2689:71: warning: This simp argument is unused:
+  zero_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [highEnergy, Finset.mul_sum, mul_ite, mul_zero, ite_mul,̵ ̵z̵e̵r̵o̵_̵m̵u̵l̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2807:0: warning: automatically included section variable(s) unused in theorem `TalagrandConjectures.badThree_subset_badTwo`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:2965:12: warning: This simp argument is unused:
+  h
+
+Hint: Omit it from the simp argument list.
+  simp [h,̵h̵x]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:3097:0: warning: automatically included section variable(s) unused in theorem `TalagrandIntegral.sparse_union`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:3116:0: warning: automatically included section variable(s) unused in theorem `TalagrandIntegral.dense_union`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:3205:0: warning: automatically included section variable(s) unused in theorem `TalagrandIntegral.pad_tuple`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:3217:0: warning: automatically included section variable(s) unused in theorem `TalagrandIntegral.union_concat_left`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean:3225:0: warning: automatically included section variable(s) unused in theorem `TalagrandIntegral.union_concat_right`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'TalagrandIntegral.maximal_truncation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TalagrandIntegral.fixed_cardinality_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TalagrandIntegral.multiscale_selector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TalagrandIntegral.mean_selector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TalagrandIntegral.fractional_to_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TalagrandIntegral.comparison_theorem_1_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TalagrandIntegral.integralThreshold_isGreatest' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TalagrandIntegral.fractionalThreshold_isGreatest' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TalagrandConjectures.li_weaklySmall_badTwo_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TalagrandIntegral.integral_two_unions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TalagrandIntegral.discrete_convexity_proposition_3_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TalagrandIntegral.discrete_convexity_theorem_1_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+TalagrandIntegral.fractional_to_integral {X : Type} [Fintype X] [DecidableEq X] {r : ℝ} (hr : 0 ≤ r)
+  {F : Finset (Finset X)} {g : Finset X → ℝ} (hg : TalagrandIntegral.FractionalCover r F g) :
+  TalagrandIntegral.Small (r / TalagrandIntegral.comparisonConstant) F
+TalagrandIntegral.comparison_theorem_1_1 {X : Type} [Fintype X] [DecidableEq X] {F : Finset (Finset X)} (hF : ∅ ∉ F) :
+  TalagrandIntegral.fractionalThreshold F ≤ TalagrandIntegral.comparisonConstant * TalagrandIntegral.integralThreshold F
+TalagrandIntegral.integral_two_unions {X : Type} [Fintype X] [DecidableEq X] {p : ℝ} (hp : 0 < p) (hp1 : p < 1)
+  (A : Set (TalagrandConjectures.Cube X)) (hm : 1 / 2 ≤ TalagrandConjectures.measure p A) :
+  TalagrandIntegral.IntegralSmall (p / (50 * 512 ^ 4)) (TalagrandConjectures.badTwo A)
+TalagrandIntegral.discrete_convexity_theorem_1_1 {X : Type} [Fintype X] [DecidableEq X] {p : ℝ} (hp : 0 < p)
+  (hp1 : p < 1) (D : Set (TalagrandConjectures.Cube X)) (hD : 1 - 1 / 2 ^ 75 ≤ TalagrandConjectures.measure p D) :
+  TalagrandIntegral.IntegralSmall p (TalagrandConjectures.badUnions (2 ^ 75) D)
