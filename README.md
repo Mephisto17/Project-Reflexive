@@ -2,6 +2,8 @@
 
 This repository collects Lean formalizations and verification artifacts for Talagrand-related theorems and conjectures. Each result lives in an independent project directory with its sources, dependency pins, mathematical scope, and verification records.
 
+[Read the project vision](PROJECT.md): an interactive, visual, and directly checkable experience for researchers, learners, and the wider public.
+
 ## Projects
 
 ### Kahn–Kalai conjecture
@@ -58,6 +60,7 @@ The project pins Lean 4.32.0 and mathlib commit `81a5d257c8e410db227a6665ed08f64
 ```text
 Project-Reflexive/
 ├── README.md
+├── PROJECT.md
 ├── Kahn-Kalai/
 │   ├── KahnKalai/, verification/
 │   └── Lean sources, project README, license, and Lake configuration
