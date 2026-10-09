@@ -82,7 +82,10 @@ def project_data(project_id, directory, paths, default):
             name = command.group('name')
             full_name = f'{namespace}.{name}' if namespace else name
             stop = commands[index + 1].start() if index + 1 < len(commands) else len(source)
-            start = command.start()
+            # The command regex may consume blanked-out comments through its
+            # leading whitespace. Start at the declaration modifiers instead,
+            # so source links and preceding doc comments use the real line.
+            start = command.start('modifiers')
             body = source[start:stop].strip()
             raw = original[start:stop].strip()
             header_stop = re.search(r':=|\bwhere\b', body)
@@ -99,7 +102,8 @@ def project_data(project_id, directory, paths, default):
             line = original[:start].count('\n') + 1
             while line <= len(original.splitlines()) and not original.splitlines()[line - 1].strip():
                 line += 1
-            audit = next((path for path, report in reports.items() if full_name in report), None)
+            audit_pattern = re.compile(rf'(?<![\w.]){re.escape(full_name)}(?![\w.])')
+            audit = next((path for path, report in reports.items() if audit_pattern.search(report)), None)
             node = {
                 'id': f'{project_id}:{full_name}', 'name': full_name, 'shortName': name,
                 'kind': command.group('kind'), 'module': module, 'namespace': namespace,

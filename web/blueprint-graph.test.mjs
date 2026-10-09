@@ -4,6 +4,16 @@ import { readFile } from 'node:fs/promises';
 import { indexProject, visibleDeclarations, layoutDeclarations } from './blueprint-graph.js';
 
 const data = JSON.parse(await readFile(new URL('./blueprint-data.json', import.meta.url), 'utf8'));
+const sources = JSON.parse(await readFile(new URL('./lean-sources.json', import.meta.url), 'utf8')).files;
+
+test('source anchors point at declarations rather than preceding documentation', () => {
+  for (const project of data.projects) {
+    for (const node of project.nodes) {
+      const start = sources[node.source].split('\n').slice(node.line - 1).join('\n');
+      assert.match(start, /^\s*(?:@\[[^\n]*\]\s*)?(?:(?:private|protected|noncomputable|unsafe)\s+)*(?:theorem|lemma|def|abbrev|structure|inductive|class)\b/, `${node.name}:${node.line}`);
+    }
+  }
+});
 
 test('every collection has closed, acyclic references and correctly directed layers', () => {
   for (const collection of data.projects) {

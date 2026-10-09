@@ -46,12 +46,12 @@ with sync_playwright() as playwright:
     expect(page.locator('#lean-source-title')).to_have_text('Comparison.lean')
     expect(page.locator('.source-line.is-highlighted')).to_contain_text('comparison_theorem_1_1')
     assert len(page.context.pages) == pages_before
-    assert page.locator('#source-github').get_attribute('href').endswith('Comparison.lean#L83')
+    assert page.locator('#source-github').get_attribute('href').endswith('Comparison.lean#L65')
     page.locator('#source-line-input').fill('1')
     page.locator('#source-go').click()
     expect(page.locator('.source-line.is-location')).to_have_attribute('data-line', '1')
     page.locator('#source-declaration').click()
-    expect(page.locator('.source-line.is-location')).to_have_attribute('data-line', '83')
+    expect(page.locator('.source-line.is-location')).to_have_attribute('data-line', '65')
     expect(page.locator('.source-line.is-location')).to_be_in_viewport()
     page.context.grant_permissions(['clipboard-read', 'clipboard-write'])
     page.locator('#source-copy').click()
@@ -97,6 +97,16 @@ with sync_playwright() as playwright:
     assert page.locator('#bp-zoom-value').inner_text() != zoom_before
     page.locator('#bp-fit').click()
     assert page.locator('#bp-zoom-value').inner_text() == zoom_before
+    box = page.locator('#bp-graph').bounding_box()
+    transform_before = page.locator('#bp-scene').get_attribute('transform')
+    page.mouse.move(box['x'] + 25, box['y'] + 25)
+    page.mouse.down()
+    page.mouse.move(box['x'] + 75, box['y'] + 65, steps=5)
+    page.mouse.up()
+    assert page.locator('#bp-scene').get_attribute('transform') != transform_before
+    page.mouse.wheel(0, -100)
+    expect(page.locator('#bp-zoom-value')).not_to_have_text(zoom_before)
+    page.locator('#bp-fit').click()
     page.locator('#bp-graph').focus()
     transform_before = page.locator('#bp-scene').get_attribute('transform')
     page.keyboard.press('ArrowRight')

@@ -84,7 +84,7 @@ export function createBlueprint({ getLanguage, showResult }) {
     const auditLink = node.auditSource ? `<a href="${escape(sourceRoot + node.auditSource)}" target="_blank" rel="noopener noreferrer">${t('bpAudit')}</a>` : '';
     $('#bp-inspector').setAttribute('aria-label', `${t('bpSelected')}: ${node.name}`);
     $('#bp-inspector').innerHTML = `<div class="bp-inspector-header"><span class="bp-inspector-eyebrow">${t('bpSelected')}</span><span class="bp-kind-badge">${escape(node.kind)}</span></div>
-      <h3 id="bp-selected-name">${escape(node.name)}</h3><p class="bp-module">${escape(node.module)} · ${escape(node.source.split('/').at(-1))}:${node.line}</p>
+      <h3 id="bp-selected-name">${escape(node.name).replaceAll('.', '.<wbr>').replaceAll('_', '_<wbr>')}</h3><p class="bp-module">${escape(node.module)} · ${escape(node.source.split('/').at(-1))}:${node.line}</p>
       <div class="bp-explanation">${explanation}</div>
       <section class="bp-inspector-section"><h4>${t('bpStatement')}</h4><pre id="bp-statement"><code>${escape(node.statement)}</code></pre></section>
       ${node.documentation ? `<section class="bp-inspector-section"><h4>${t('bpOriginalDoc')}</h4><p class="bp-source-doc">${escape(node.documentation)}</p></section>` : ''}
@@ -165,7 +165,7 @@ export function createBlueprint({ getLanguage, showResult }) {
   input.addEventListener('focus', openSearch);
   input.addEventListener('input', openSearch);
   input.addEventListener('keydown', event => {
-    if (event.key === 'Escape') { closeSearch(); event.stopPropagation(); return; }
+    if (event.key === 'Escape') { event.preventDefault(); closeSearch(); event.stopPropagation(); return; }
     if (event.key === 'Enter' && !menu.hidden) { event.preventDefault(); chooseSearch(Math.max(0, searchActive)); return; }
     if (!['ArrowDown', 'ArrowUp'].includes(event.key)) return;
     event.preventDefault();

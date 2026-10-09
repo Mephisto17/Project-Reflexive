@@ -21,12 +21,14 @@ For everyone else, a theorem can begin as a question worth asking. A graph makes
 
 - **English and Chinese:** switch the whole interface, including explanations, controls, history, and bibliography notes.
 - **A map of proofs:** select lemmas, corollaries, and theorems to understand their role and follow their source dependencies. Direct arrows and paths with omitted intermediate steps have distinct labels.
+- **An interactive blueprint:** search declarations in all four collections; explore neighbors, all prerequisites, or the whole collection; zoom, pan, and follow references to their Lean statements.
+- **Lean source inside the page:** open a read-only source panel with syntax coloring, line numbers, a highlighted declaration, line navigation, and file copying. GitHub remains available as a secondary link.
 - **Choose your depth:** move between ordinary-language intuition and precise hypotheses, formulas, and Lean declarations.
 - **Explore by question:** search four formalization collections or browse thresholds, covering, and convexity.
 - **Learn by interaction:** vary a Bernoulli probability and compare sampled subsets with the exact probability in a small finite example.
 - **Keep the history visible:** each collection includes mathematical authors, proof routes, publication or preprint information, formalization credit, and source links.
 
-The working page is [`index.html`](index.html). Its proof map is a curated six-node example from the smallness/discrete-convexity development, not a complete map of every proof in the repository. The probability lab is explicitly an illustration, not a proof of any general threshold theorem. Read the longer [project vision](PROJECT.md) for the direction beyond this first interface.
+The working page is [`index.html`](index.html). Its opening map is a curated six-node introduction to smallness and discrete convexity. The larger **interactive blueprint** indexes 789 declarations and 2,731 explicit local source references across the four collections, including shared supporting declarations counted within each collection. It is a source-navigation graph, not an exhaustive extraction of elaborated Lean proof terms: Mathlib declarations, tactic-generated dependencies, and unresolved notation are omitted. The probability lab illustrates an idea rather than proving a general threshold theorem. Read the longer [project vision](PROJECT.md).
 
 ## Projects
 
@@ -34,7 +36,7 @@ The working page is [`index.html`](index.html). Its proof map is a curated six-n
 |---|---|---|
 | Kahn-Kalai Conjecture (Park-Pham Theorem) | Expectation thresholds and random containment | [`Kahn-Kalai/README.md`](Kahn-Kalai/README.md) |
 | Talagrand / Park–Pham 5.7 | Selector processes and small covers | [`talagrand-conjecture-5-7/README.md`](talagrand-conjecture-5-7/README.md) |
-| Talagrand’s five conjectures | Thinning, spread, Walsh identities, and fractional covers | [`talagrand-five-conjectures/README.md`](talagrand-five-conjectures/README.md) |
+| 5 questions of Talagrand via the kernel method of Li | Thinning, spread, Walsh identities, and fractional covers | [`talagrand-five-conjectures/README.md`](talagrand-five-conjectures/README.md) |
 | Talagrand expectation thresholds and discrete convexity | Integral–fractional comparison and same-density union smallness | [`small-vs-weakly-small-and-discrete-convexity/README.md`](small-vs-weakly-small-and-discrete-convexity/README.md) |
 
 ### Kahn-Kalai Conjecture (Park-Pham Theorem): from an estimate to a threshold
@@ -49,7 +51,7 @@ The question appears in Jinyoung Park and Huy Tuan Pham’s [selector-process pa
 
 The repository proves the **corrected positive-finite-expectation** version of Conjecture 5.7 with `L = 2048`. Its assumptions are a finite ground set, `0 < p < 1`, nonnegative weights, and `0 < E < ∞`. Weight collections may be infinite; attaining the supremum is not assumed. The printed conjecture and the exact corrected interface are distinguished in the [project scope](talagrand-conjecture-5-7/README.md).
 
-### Five Talagrand conjectures: a landscape of connections
+### 5 questions of Talagrand via the kernel method of Li
 
 The original questions come from Michel Talagrand’s [*Are many small sets explicitly small?*](https://doi.org/10.1145/1806689.1806693), STOC 2010, 13–36. This collection formalizes the intended statements of Conjectures 9.1, 7.12, 7.9, 7.3, and 7.2, with supporting results and explicit convention corrections.
 
@@ -80,6 +82,14 @@ Open [http://localhost:5173](http://localhost:5173). Use `npm run build` to crea
 
 The page uses plain HTML, CSS, and JavaScript. Bilingual copy, theorem details, credits, and references live in [`web/data.js`](web/data.js). The exact eight-point probability calculation is in [`web/math.js`](web/math.js).
 
+After editing the modular Lean sources, regenerate the blueprint and local source snapshot with Python 3:
+
+```sh
+npm run blueprint
+```
+
+[`scripts/build_blueprint.py`](scripts/build_blueprint.py) creates [`web/blueprint-data.json`](web/blueprint-data.json) and [`web/lean-sources.json`](web/lean-sources.json). The committed snapshots let the ordinary site build run without Python or Lean. Source files are displayed unchanged, with their existing comments and notices. The panel is a reader, not a live Lean editor or verification session.
+
 ## Read the evidence carefully
 
 The supplied `verification/` directories contain build logs, Lean versions, axiom reports, source hashes, and result records. A successful Lean check establishes the formal statement under its recorded assumptions. It does not, by itself, establish that an informal paper and a formal declaration have identical scope; that correspondence still deserves mathematical review.
@@ -93,7 +103,7 @@ npm test
 npm run build
 ```
 
-`npm test` checks the exact probability calculation used by the playground. `python scripts/check_site.py` runs the browser smoke test when Playwright Chromium is installed and `npm run dev` is running. Lean reproduction commands are collected in [`PROJECT.md`](PROJECT.md#reproduce-the-projects).
+`npm test` checks the probability calculation, graph closure and layout, source anchors, syntax coloring, and exact correspondence between source snapshots and local Lean files. `python scripts/check_site.py` checks both languages, collection navigation, graph scopes, search, zoom, keyboard interaction, source reading and copying, result dialogs, and mobile layouts when Playwright Chromium is installed and `npm run dev` is running. Lean reproduction commands are collected in [`PROJECT.md`](PROJECT.md#reproduce-the-projects).
 
 ## Reproduce the projects
 
@@ -121,7 +131,7 @@ Project Reflexive 是一个中英双语的数学项目，结合 **Lean 形式化
 
 对于学生与公众，一个问题可以从一幅图、一个例子或一个小实验开始。点击证明图谱中的节点，了解引理的作用，以及它如何支撑更大的定理；需要时，再切换到形式化视角。界面上的 **EN / 中文** 开关会同时切换解释、控制项、历史与文献说明。
 
-当前包含四个成果集：Kahn–Kalai 猜想（Park–Pham 定理）、Talagrand / Park–Pham 猜想 5.7、Talagrand 的五个猜想，以及小性与离散凸性。小性与离散凸性这两项关联定理来自 **OpenAI 于 2026 年 10 月 6 日公开的 Math Release 第 175 族**；两份预印本日期为 9 月 23 日，作者标注为 OpenAI，发布渠道为 GitHub 预印本，而非已确认的期刊论文。原始数学贡献、后续证明路线、Lean 形式化与本项目的阐述分别注明。
+当前包含四个成果集：Kahn–Kalai 猜想（Park–Pham 定理）、Talagrand / Park–Pham 猜想 5.7、Li 的核方法解答 Talagrand 的 5 个问题，以及小性与离散凸性。小性与离散凸性这两项关联定理来自 **OpenAI 于 2026 年 10 月 6 日公开的 Math Release 第 175 族**；两份预印本日期为 9 月 23 日，作者标注为 OpenAI，发布渠道为 GitHub 预印本，而非已确认的期刊论文。原始数学贡献、后续证明路线、Lean 形式化与本项目的阐述分别注明。
 
 在仓库根目录运行 `npm run dev`，打开 [http://localhost:5173](http://localhost:5173) 即可浏览。页面已包含精选证明图谱、四个成果集的历史与参考文献，以及八点随机子集实验。图谱不是全仓库的完整依赖提取，实验也不构成一般性定理的证明。
 

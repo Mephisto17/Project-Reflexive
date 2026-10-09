@@ -183,7 +183,7 @@ export const nodes = {
     description: l('Li’s argument produces fractional covering weights for sets that cannot be covered by the union of two members of a large family.', 'Li 的论证为无法由一个大集合族的两个成员的并集覆盖的集合，提供分数覆盖权重。'),
     formal: l('For 0 < p < 1 and a family of Bernoulli measure at least 1/2, the two-union exceptional family is weakly (p/2)-small.', '当 0 < p < 1 且集合族的伯努利测度至少为 1/2 时，二重并集的例外集合族具有弱 (p/2)-小性。'),
     code: 'TalagrandConjectures.li_weaklySmall_badTwo_half',
-    source: `${integral}TalagrandConjectures/Li.lean#L247`,
+    source: `${integral}TalagrandConjectures/Li.lean#L248`,
   },
   rounding: {
     label: 'nodeRounding', kind: 'rounding',
@@ -191,7 +191,7 @@ export const nodes = {
     description: l('Fractional weights allow a flexible cover. The rounding theorem turns it into an ordinary set cover at a smaller density, keeping the same cost budget.', '分数权重让覆盖更灵活。舍入定理在更小的密度下，将它转换为普通集合覆盖，并保持相同的成本预算。'),
     formal: l('For r ≥ 0, a fractional cover of cost ≤ 1/2 yields integral smallness at r/C, with C = 25 · 512⁴.', '对于 r ≥ 0，成本不超过 1/2 的分数覆盖，给出密度 r/C 下的整小性，其中 C = 25 · 512⁴。'),
     code: 'TalagrandIntegral.fractional_to_integral\nFractionalCover r F g → Small (r / comparisonConstant) F',
-    source: `${integral}TalagrandIntegral/Comparison.lean#L36`,
+    source: `${integral}TalagrandIntegral/Comparison.lean#L32`,
   },
   comparison: {
     label: 'nodeComparison', kind: 'theorem11',
@@ -199,7 +199,7 @@ export const nodes = {
     description: l('Whole-set covers and fractional covers look different. Their expectation thresholds are comparable up to a universal constant.', '完整集合的覆盖与分数覆盖，看起来不同。它们的期望阈值，却可以在一个普适常数的范围内相互比较。'),
     formal: l('For a finite family F excluding the empty set: q_f(F) ≤ (25 · 512⁴) q(F). Monotonicity of F is not required.', '对于不含空集的有限集合族 F：q_f(F) ≤ (25 · 512⁴) q(F)。不要求 F 具有单调性。'),
     code: 'TalagrandIntegral.comparison_theorem_1_1\nfractionalThreshold F ≤ comparisonConstant * integralThreshold F',
-    source: `${integral}TalagrandIntegral/Comparison.lean#L83`,
+    source: `${integral}TalagrandIntegral/Comparison.lean#L65`,
   },
   unions: {
     label: 'nodeUnions', kind: 'corollary',
@@ -207,7 +207,7 @@ export const nodes = {
     description: l('Combine Li’s fractional certificate with integral rounding. The sets missed by two-member unions admit a low-cost ordinary cover at a reduced density.', '将 Li 的分数证书与整覆盖舍入结合。两个成员的并集未能覆盖的集合，在缩小后的密度下具有低成本的普通覆盖。'),
     formal: l('If 0 < p < 1 and μ_p(A) ≥ 1/2, then Bad₂(A) is integrally small at p/(50 · 512⁴). The cover budget is 1/2.', '若 0 < p < 1 且 μ_p(A) ≥ 1/2，则 Bad₂(A) 在密度 p/(50 · 512⁴) 下具有整小性。覆盖预算为 1/2。'),
     code: 'TalagrandIntegral.integral_two_unions',
-    source: `${integral}TalagrandIntegral/CubeBridge.lean#L114`,
+    source: `${integral}TalagrandIntegral/CubeBridge.lean#L99`,
   },
   convexity: {
     label: 'nodeConvexity', kind: 'theorem11',
@@ -215,7 +215,7 @@ export const nodes = {
     description: l('The two-union bound and finite probability couplings lead to a same-density covering statement for unions of a universal number of sets.', '二重并集的界与有限概率耦合，共同导向一个结论：使用普适数量的集合取并集，可以在原密度下得到覆盖小性。'),
     formal: l('With k = 2⁷⁵, 0 < p < 1, and μ_p(D) ≥ 1 − 1/k, Bad_k(D) is integrally small at p. No monotonicity assumption is needed.', '取 k = 2⁷⁵。当 0 < p < 1 且 μ_p(D) ≥ 1 − 1/k 时，Bad_k(D) 在原密度 p 下具有整小性。不需要单调性假设。'),
     code: 'TalagrandIntegral.discrete_convexity_theorem_1_1\nIntegralSmall p (badUnions (2^75) D)',
-    source: `${integral}TalagrandIntegral/DiscreteConvexity.lean#L49`,
+    source: `${integral}TalagrandIntegral/DiscreteConvexity.lean#L42`,
   },
 };
 
@@ -318,7 +318,7 @@ export const results = [
   },
   {
     id: 'five', number: '03', tags: ['covering', 'convexity'], path: 'talagrand-five-conjectures/',
-    title: l('Talagrand’s five conjectures', 'Talagrand 的五个猜想'),
+    title: l('5 questions of Talagrand via the kernel method of Li', 'Li 的核方法解答 Talagrand 的 5 个问题'),
     category: l('COMBINATORICS · FRACTIONAL COVERS', '组合数学 · 分数覆盖'),
     summary: l('Five questions about small sets, thinning, and fractional covers. Different routes through a shared mathematical landscape.', '关于小集合、稀疏化与分数覆盖的五个问题。在同一片数学风景中，探索不同路径。'),
     byline: l('Li · Fang–Wang · Park–Talagrand, 2026', 'Li · Fang–Wang · Park–Talagrand，2026'),
