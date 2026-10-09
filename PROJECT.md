@@ -1,69 +1,156 @@
 # Project Reflexive
 
-**Explore the ideas. See how they connect. Check what has been proved.**
+**Follow the idea. Trust the proof.**
 
-Project Reflexive aims to make mathematics at the research frontier easier to approach, understand, and use. We are building toward an interactive, visual, directly checkable home for mathematical results, beginning with theorems and conjectures related to Talagrand.
+Project Reflexive is a bilingual, public-facing home for research mathematics. It begins with Lean formalizations of probability and combinatorics around Talagrand’s questions: threshold phenomena, small and weakly small families, selector processes, fractional covers, and discrete convexity.
 
-Our audience includes working mathematicians, mathematics students, and anyone curious about how new mathematical knowledge is established. Readers should be able to choose their depth: a short explanation, a visual account of the ideas, a precise statement, or the formal proof itself.
+The project is designed for two readers at the same time. A curious reader should be able to begin with a picture, a small experiment, or a plain-language question. A mathematician should be able to move from that explanation to the exact theorem, its hypotheses, Lean declaration, source revision, axiom report, and reproducible build. These are two ways into the same mathematics.
 
-**Where we are today:** this repository contains Lean source projects, mathematical scope notes, dependency versions, and supplied verification records. The interactive maps, visual explanations, and guided experiences described below are our product direction; they are not yet available as a finished interface.
+English and Chinese are first-class languages in the interface. The language switch changes the explanatory copy, labels, controls, and result notes together; it does not hide the formal names or replace the original mathematical notation.
 
-[Browse the current results](README.md#projects) · [Read the verification instructions](README.md#reproduce-the-projects)
+## What the project is for
 
-## Why this project exists
+Research mathematics can be difficult to enter for reasons that have little to do with the final theorem. A reader may not know which definition matters, why a lemma is useful, or how a published argument is checked. A formal proof can provide a dependable logical record, but Lean source alone is rarely a welcoming first explanation.
 
-A result can be published, important, and still difficult to enter. Researchers spend substantial time checking unfamiliar arguments before they can use a theorem. Students need help seeing which definitions and intermediate results carry the proof. A curious reader may need a clear account of the question before any notation becomes meaningful.
+Project Reflexive connects these layers:
 
-We want to lower these barriers while preserving the substance of the mathematics. Formal verification can reduce the work of checking logical steps. Visual explanations can make structure and intuition easier to grasp. Careful summaries can help readers understand why a question matters and where a result fits.
+- **Illustration** gives a reader something concrete to see. Small Bernoulli experiments, diagrams, and worked examples introduce an idea before the notation becomes dense.
+- **Proof maps** show how definitions, lemmas, corollaries, and theorems depend on one another. A map is a curated explanation of the source, so it labels omitted intermediate steps and distinguishes direct dependencies from conceptual connections.
+- **Formal verification** gives specialists a direct route to the formal statement and its evidence. Lean checks the logical consequence of the recorded assumptions; the project keeps the environment, source revision, build log, and axiom report close to the result.
+- **History and bibliography** keep mathematical credit visible. The original proposer, result author, later proof author, formalization source, and exposition are separate contributions and should be named separately.
 
-Our starting point is a collection of formalizations. Our ambition is a product that makes this collection useful to people with different backgrounds, questions, and amounts of time.
+The illustrations are guides to intuition. They do not turn a simulation into a proof. The proof map is a useful, reviewed view of dependencies. It is not presented as a complete automatically extracted graph unless it has been generated and checked as one.
 
-## Choose your way into the mathematics
+## The current experience
 
-**For researchers: inspect the claim, then use it with confidence.** A result should offer a direct route to its exact statement, hypotheses, provenance, formal declaration, proof dependencies, and reproducible check. Researchers who accept Lean's foundations and the documented assumptions can rely on a kernel-checked proof of that statement, saving time otherwise spent rechecking its logical steps. They can focus their attention on whether the statement captures the intended mathematics and applies to their problem.
+The project page is a static, bilingual interface at [`index.html`](index.html). It offers:
 
-**For students: see the architecture of an argument.** A visual map should reveal how definitions, lemmas, and theorems fit together. Selecting a node should explain what it says, why it is useful, and what a reader needs to understand first. Short worked examples and guided routes should let learners move between intuition and formal detail at their own pace.
+1. A proof map for the relationship between fractional certificates, integral rounding, the integral–fractional comparison, the two-union corollary, and discrete convexity.
+2. An intuition/formal toggle. The first view explains a node in ordinary language; the second shows its formal role and Lean declaration.
+3. Four result collections with search and topic filters.
+4. A result reader containing a short history, the exact scope recorded by this repository, proof and formalization credit, and a bibliography with links to papers, preprints, and OpenAI’s public Math release where applicable.
+5. A small random-subset experiment. It calculates the exact eight-point binomial probability separately from the sampled illustration and labels the experiment as an illustration rather than a proof.
+6. English and Chinese interface copy with persisted language preference.
 
-**For the public: begin with a question worth exploring.** An entry point might be a small puzzle, a surprising pattern, or an experiment with random subsets. A reader should be able to make a prediction, change a parameter, and see what happens before encountering the general statement. Every explanation should offer a natural next step for someone who wants to go deeper.
+The page’s content is maintained in [`web/data.js`](web/data.js). This keeps mathematical statements, historical notes, credits, bibliography, and translations reviewable as data rather than burying them in rendering code.
 
-These are different routes through the same mathematics. Moving between them should be easy, and the formal sources should always remain within reach.
+## Results in this repository
 
-## The experience we want to build
+### Kahn-Kalai Conjecture (Park-Pham Theorem)
 
-We will treat presentation, navigation, and explanation as essential parts of the project. The first screen should help someone understand the question and choose a useful next step. Technical details should appear where they answer a reader's question, with terminology introduced as it becomes necessary.
+The Kahn–Kalai expectation-threshold question asks whether the ordinary threshold of an increasing property can be controlled by its expectation threshold, up to a logarithmic factor. This repository records the explicit bound
 
-The planned experience has three connected elements:
+```text
+p_c(F) ≤ 100000 · q(F) · log₂ ℓ(F).
+```
 
-- **A map of mathematical relationships.** Build on ideas and tooling from Lean blueprint to show the structure behind a result. We want readable labels, clear visual hierarchy, focused views, and paths suited to different levels of preparation. Edges should distinguish actual proof dependencies from conceptual connections and historical relationships. An attractive diagram must also be an accurate one.
-- **Interactive explanations.** Let readers vary a probability, compare an integral cover with a fractional cover, or inspect a small finite example. Each interaction should explain what changes, what stays fixed, and which assumptions matter. Examples and simulations will be identified as illustrations; the general claim will link to its formal statement and verification evidence.
-- **A direct route to verification.** A reader should be able to move from an explanation to the exact Lean declaration and its dependencies, then find the source revision, environment, axiom report, and instructions needed to reproduce the check. We aim to make the evidence easy to inspect and the check straightforward to rerun.
+The original conjecture is due to Jeff Kahn and Gil Kalai. Jinyoung Park and Huy Tuan Pham proved it in *A Proof of the Kahn–Kalai Conjecture*, published in the *Journal of the American Mathematical Society* 37 (2024). The formal project uses the Tran–Vu inductive route, building on Dan Clemens Posch’s existing Lean formalization, and adds selected bridges to the Park–Pham paper. The result reader distinguishes these mathematical credits from the formalization credit.
 
-For example, someone exploring smallness and weak smallness could start with a tiny family of sets, try to cover it, and compare whole-set choices with fractional weights. A short explanation could then connect that experiment to the comparison theorem. The same page would offer the theorem's assumptions, its place in the proof map, and the formal source.
+Start at [`Kahn-Kalai/README.md`](Kahn-Kalai/README.md), then inspect the supplied records in [`Kahn-Kalai/verification/`](Kahn-Kalai/verification/).
 
-The interface should feel calm, inviting, and coherent. Plain language, thoughtful typography, accessible colors, keyboard navigation, and useful views on smaller screens all matter. Reading Lean code should be an available depth of engagement, never a prerequisite for understanding the project's purpose.
+### Talagrand / Park–Pham Conjecture 5.7
 
-## Academic care is part of the design
+This collection formalizes the corrected positive-finite-expectation version of Conjecture 5.7. For a finite ground set, `0 < p < 1`, nonnegative weights, and positive finite extended expectation, it proves p-smallness for the tail family at the explicit constant `L = 2048`. The weight collection may be infinite, and the supremum need not be attained.
 
-Every result must preserve a clear account of what has been established, by whom, and under which assumptions.
+The mathematical result belongs to Jinyoung Park and Huy Tuan Pham’s selector-process work, published in *Annals of Mathematics* 199 (2024). The Lean development adapts the clipped-threshold and witness method in the alternative proof by Witold Bednorz, Rafał Martynek, and Rafał Meller. The repository states the corrected formal interface explicitly rather than silently identifying it with every printed version of the conjecture.
 
-We will credit the original mathematical work, prior formalizations, and subsequent contributions separately, with appropriate citations, source revisions, and licenses. Formalizing an existing result does not transfer credit for its discovery. When a formal proof takes a different route from a cited paper, or covers a modified statement, that distinction belongs beside the result.
+Read [`talagrand-conjecture-5-7/README.md`](talagrand-conjecture-5-7/README.md) and its [`verification/`](talagrand-conjecture-5-7/verification/) records.
 
-Verification labels must describe evidence precisely. A supplied compiler log, a reproduced build, and an independently reviewed match between a paper and its formal statement are different achievements. We will identify the checked revision and environment, disclose the axioms used, and make limitations or incomplete work visible. A successful Lean check establishes the formal statement under its recorded assumptions; correspondence with an informal claim still deserves mathematical review.
+### Talagrand’s five conjectures
 
-Visuals and summaries will remain connected to that record. Definitions cannot quietly change between a friendly explanation and a technical view. Analogies should state their limits. An illustrative relationship should never be displayed as a verified logical implication without support.
+This collection proves the intended formal statements of Conjectures 9.1, 7.12, 7.9, 7.3, and 7.2, together with supporting results. Its mathematical context begins with Michel Talagrand’s *Are many small sets explicitly small?*, published in the proceedings of STOC 2010.
 
-## Make the journey memorable
+The updated statements use direct arguments from Chen Li’s *On p-Spread Measures*, Xuan Fang and Tianyu Wang’s *A Note on a Result of Chen Li*, and the Park–Talagrand note *AI’s solution of Conjecture 9.1*. The latter says that its proofs were generated entirely by GPT-6 Astra, that the named authors claim no proof credit, and that it is not intended for journal publication. The collection keeps those facts visible beside the formal declarations.
 
-Enjoyment can help people stay with a difficult idea. We want concise takeaways, annotated examples, historical context, short quizzes, and moments that invite a reader to ask, “What if I change this?” A counterexample or a well-chosen puzzle can make an assumption memorable.
+Read [`talagrand-five-conjectures/README.md`](talagrand-five-conjectures/README.md) and its [`verification/`](talagrand-five-conjectures/verification/) records.
 
-These elements should reward curiosity and leave readers with an accurate understanding. A visitor might leave knowing why a threshold is interesting, what a fractional cover allows, or how a small lemma supports a much larger conclusion. The experience should remain useful and credible to specialists while becoming welcoming to a much wider audience.
+### Talagrand’s expectation thresholds and discrete convexity
 
-## How we will move forward
+The fourth collection corresponds to OpenAI’s result family 175, **“Talagrand’s expectation thresholds, discrete convexity, and graph decompositions.”** OpenAI’s public Math release dates the two companion preprints to September 23, 2026 and published the release, Lean catalogue, and supporting materials on October 6, 2026.
 
-The next stage is to connect selected formal results to carefully reviewed explanations and a dependency map. We will develop a small number of interactive examples around those results, make verification evidence easier to navigate, and test the experience with researchers, students, and readers without specialist training.
+The expectation-threshold theorem compares the integral and fractional thresholds with the explicit factor `25 · 512⁴`, using the same cover budget `1/2`. The discrete-convexity theorem uses `k = 2⁷⁵`: if a finite family has Bernoulli-p measure at least `1 − 1/k`, then the sets not contained in a union of k members are p-small at the original density, again with cover cost at most `1/2`.
 
-Success will mean that a researcher can quickly assess whether a result is usable, a student can explain an important relationship in the proof, and a curious visitor can describe the question and why it matters. It will also mean that each reader can find the evidence behind a claim.
+The mathematical manuscripts are authored by OpenAI in the release catalogue. The public Lean scope is documented in [OpenAI Math’s result-family note](https://github.com/openai/math/blob/main/lean/docs/175.md). This repository preserves the supplied source and verification records, and its page adds an accessible bilingual explanation and a curated dependency map. Chen Li is credited for the supporting fractional-certificate argument used by the discrete-convexity route.
 
-We welcome contributions in formalization, mathematical review, exposition, visualization, interaction design, and accessibility. The shared aim is to make frontier mathematics easier to enter, easier to examine, and easier to share responsibly.
+Read [`small-vs-weakly-small-and-discrete-convexity/README.md`](small-vs-weakly-small-and-discrete-convexity/README.md), the [OpenAI comparison preprint](https://github.com/openai/math/blob/main/preprints/Integral-and-fractional-expectation-thresholds-are-equivalent-September-23-2026/paper.pdf), and the [OpenAI discrete-convexity preprint](https://github.com/openai/math/blob/main/preprints/Talagrands-discrete-convexity-conjecture-September-23-2026/paper.pdf).
 
-[Explore Project Reflexive](README.md)
+## How to read a verification label
+
+“Verified” is used narrowly here. A supplied build record reports what was checked, with which Lean and mathlib versions, at which source revision, and with which transitive axioms. Those records are evidence for the formal Lean statement and its recorded assumptions.
+
+That evidence does not by itself settle whether a formal statement is the best translation of an informal paper, whether a cited proof deserves a particular interpretation, or whether an illustration captures every hypothesis. The page therefore keeps four things near each result:
+
+- the exact formal declaration and hypotheses;
+- the mathematical history and bibliography;
+- the formal source and verification artefacts;
+- the scope or limitation notes supplied by the project.
+
+The audited proof projects report only Lean’s standard `propext`, `Classical.choice`, and `Quot.sound` dependencies. They contain no proof placeholders or custom axioms according to the supplied audit records. Reproduce the checks before treating a record as current evidence after changing source files or dependency pins.
+
+## Reproduce the projects
+
+There is no shared Lake project at the repository root. Each result keeps its own `lean-toolchain`, `lakefile.toml`, dependencies, source files, and verification records. Run the commands from the relevant directory.
+
+```sh
+# Kahn–Kalai
+cd Kahn-Kalai
+lake exe cache get
+bash verify.sh
+
+# Conjecture 5.7
+cd ../talagrand-conjecture-5-7
+lake exe cache get
+lake build
+lake env lean Audit.lean
+lake env lean TalagrandConjecture57.lean
+
+# Five conjectures
+cd ../talagrand-five-conjectures
+lake exe cache get
+lake build
+lake env lean Audit.lean
+lake env lean TalagrandFiveConjectures.lean
+
+# Smallness and discrete convexity
+cd ../small-vs-weakly-small-and-discrete-convexity
+lake exe cache get Mathlib.Tactic Mathlib.Analysis.MeanInequalities Mathlib.Analysis.SpecialFunctions.Pow.Real Mathlib.Analysis.SpecialFunctions.Log.Basic Mathlib.Topology.Order.Compact Mathlib.Data.Fintype.Perm Mathlib.Analysis.SpecificLimits.Normed Mathlib.Analysis.Complex.ExponentialBounds
+sh scripts/verify.sh
+```
+
+The pinned projects use Lean 4.32.0 and the mathlib commit recorded in each project’s manifest. The `verification/` directories are supplied build evidence; changing a proof requires rerunning the relevant build and audit.
+
+## Run the page locally
+
+The page has no build-time framework dependency. With Node.js 20 or newer:
+
+```sh
+npm run dev
+```
+
+Then open [http://localhost:5173](http://localhost:5173). Build a static copy with `npm run build`; the result is written to `dist/`.
+
+Useful checks are:
+
+```sh
+npm test
+python scripts/check_site.py   # requires Playwright Chromium and npm run dev
+```
+
+The browser check covers both languages, language persistence, every proof-map node, formal/intuition mode, filters, search, result dialogs, bibliography links, the exact probability calculation, sampling, mobile layout, and JavaScript errors.
+
+## Contributing
+
+Contributions can improve the mathematics or the route into it:
+
+- formalize a missing declaration or audit an existing one;
+- review a theorem’s correspondence with its paper;
+- write a plain-language explanation or Chinese translation;
+- improve the proof map, example, accessibility, or mobile behavior;
+- add a citation, history note, version record, or correction;
+- preserve the original author and formalizer credits when reusing code.
+
+When adding a result, include its exact scope, mathematical provenance, formalization provenance, pinned environment, verification report, source hashes where applicable, and license. A new contribution should make it easier for a reader to understand what is true, why it matters, and how to check it.
+
+## Attribution and licenses
+
+Formalizing an existing result does not transfer credit for its discovery. Preserve the mathematical authors, paper citations, preprint versions, formalization authors, upstream repositories, licenses, and source revisions. The Kahn–Kalai project retains its Apache-2.0 license and upstream notices in [`Kahn-Kalai/LICENSE`](Kahn-Kalai/LICENSE). The OpenAI Math release has its own repository licence and citation instructions; follow those when using the two result-family manuscripts.

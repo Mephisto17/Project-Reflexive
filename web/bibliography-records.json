@@ -1,0 +1,475 @@
+{
+  "checked_on": "2026-10-09",
+  "records": [
+    {
+      "url": "https://openai.com/index/sharing-ai-progress-in-mathematics/",
+      "metadata": {
+        "text": " Sharing AI progress in mathematics | OpenAI Skip to main content Research Products Business Developers Company Foundation (opens in a new window) Log in Try ChatGPT (opens in a new window) Research Products Business Developers Company Foundation (opens in a new window) Try ChatGPT (opens in a new window) Login OpenAI October 6, 2026 Research Publication Sharing AI progress in mathematics View on GitHub (opens in a new window) Loading… Share We’re releasing a broad range of new mathematical results produced by an internal frontier model . As we look to improve how we share results with the math community, we’ve been consulting with the independent Advisory Group on Mathematics and Artificial Intelligence at the Institute for Advanced Study ⁠ (opens in a new window) to develop best practices, and we have drawn on their advice and public recommendations ⁠ (opens in a new window) to inform how we release these results. For this release, we’re publishing the results in a GitHub repository, with protocols for paper revisions and citations. We’re continuing to explore other community-hosted alternatives for this release which meet the committee’s guidelines. For future releases, we are committed to further improving the quality of the papers via the citations, mathematical exposition, and presentation of the results for better understanding. As part of our GitHub repository, we are sharing formalizations of many of the proofs in Lean, a programming language that allows mathematical proofs to be checked by a computer. We will update the repository with more formalizations as we obtain them. To promote scientific transparency and openness, we are also publishing additional details about how we obtained the results in the repository. These include 10 summaries of the model’s reasoning, estimations of compute spent in terms of Pro usage on ChatGPT, and statistics about the number of attempted problems. The average result used the equivalent compute of roughly three hours of ChatGPT Pro thinking. We want this progress to push the frontier of human knowledge and enable further progress in mathematics. We will be funding a series of workshops, conferences, and special programs around the understanding of major results produced by AI—we will share more on this in the near future. We want to directly empower scientists with state-of-the-art capabilities and are working to responsibly release the model that produced these results. This is why it is important to continue to evaluate our internal frontier models on mathematics and other sciences, so we can accelerate developing the tools to advance those fields. We will continue to act on feedback from the community and update our standards for future disclosures of major scientific advancements. 2026 Author OpenAI Keep reading View all An OpenAI model proposes a solution to the Navier–Stokes problem Research Sep 8, 2026 Ten advances in mathematics and theoretical computer science Publication Aug 1, 2026 Accelerating scientific discovery with ChatGPT for Academic Researchers Company Jul 29, 2026 Research Research Index Research Overview Economic Research Latest Advancements GPT-6.1 Sol GPT-6 Astra GPT-5.6 GPT-5.5 Safety Safety Approach Deployment Safety (opens in a new window) Security & Privacy Trust & Transparency Products ChatGPT (opens in a new window) ChatGPT Business (opens in a new window) ChatGPT Enterprise (opens in a new window) ChatGPT for Education (opens in a new window) Codex Dots (opens in a new window) Release Notes API Platform Overview API Log In (opens in a new window) Docs (opens in a new window) Business Overview Solutions Resources Plugins Customer Stories Partner Network Contact Sales Developers Apps SDK (opens in a new window) Open Models Docs (opens in a new window) Resources (opens in a new window) Developer Forum (opens in a new window) Company About Us Our Charter Careers News Support Help Center (opens in a new window) OpenAI Status (opens in a new window) More Stories Academy Supply Co. Livestreams Podcast RSS Terms & Policies Terms of Use Privacy Policy Other Policies (opens in a new window) (opens in a new window) (opens in a new window) (opens in a new window) (opens in a new window) (opens in a new window) (opens in a new window) OpenAI © 2015–2026 Your privacy choices English United States ",
+        "links": [
+          "https://github.com/openai/math"
+        ]
+      }
+    },
+    {
+      "url": "https://raw.githubusercontent.com/openai/math/main/preprints/Integral-and-fractional-expectation-thresholds-are-equivalent-September-23-2026/README.md",
+      "metadata": {
+        "text": "# [Integral and fractional expectation thresholds are equivalent](paper.pdf)\n\n**Author:** OpenAI  \n**Date:** September 23, 2026\n\n## Citation\n\n```bibtex\n@misc{OAI:Integral-and-fractional-expectation-thresholds-are-equivalent-September-23-2026,\n  author = {{OpenAI}},\n  title = {{Integral and fractional expectation thresholds are equivalent}},\n  howpublished = {OpenAI Math Release preprint\n                  \\href{https://github.com/openai/math/blob/main/preprints/Integral-and-fractional-expectation-thresholds-are-equivalent-September-23-2026/paper.pdf}{OAI:Integral-and-fractional-expectation-thresholds-are-equivalent-September-23-2026}},\n  year = {2026}\n}\n```\n\n"
+      }
+    },
+    {
+      "url": "https://raw.githubusercontent.com/openai/math/main/preprints/Talagrands-discrete-convexity-conjecture-September-23-2026/README.md",
+      "metadata": {
+        "text": "# [Talagrand's discrete-convexity conjecture](paper.pdf)\n\n**Author:** OpenAI  \n**Date:** September 23, 2026\n\n## Citation\n\n```bibtex\n@misc{OAI:Talagrands-discrete-convexity-conjecture-September-23-2026,\n  author = {{OpenAI}},\n  title = {{Talagrand's discrete-convexity conjecture}},\n  howpublished = {OpenAI Math Release preprint\n                  \\href{https://github.com/openai/math/blob/main/preprints/Talagrands-discrete-convexity-conjecture-September-23-2026/paper.pdf}{OAI:Talagrands-discrete-convexity-conjecture-September-23-2026}},\n  year = {2026}\n}\n```\n\n"
+      }
+    },
+    {
+      "url": "https://raw.githubusercontent.com/openai/math/main/lean/docs/175.md",
+      "metadata": {
+        "text": "# Talagrand’s expectation thresholds, discrete convexity, and graph decompositions\n\nThe following describes the scope of the Lean formalization related to the following accompanying paper(s):\n\n- [Integral and fractional expectation thresholds are equivalent](../../preprints/Integral-and-fractional-expectation-thresholds-are-equivalent-September-23-2026/paper.pdf)\n- [Talagrand's discrete-convexity conjecture](../../preprints/Talagrands-discrete-convexity-conjecture-September-23-2026/paper.pdf)\n\n## Scope\n\nTalagrand's expectation-threshold conjecture asks whether the fractional and integral expectation thresholds are comparable by an absolute constant. The formalized result proves $q_f(\\mathcal F)\\le25\\cdot512^4 q(\\mathcal F)$ for every nonempty proper increasing family on a finite nonempty ground set. Both thresholds use cover budget $1/2$, and fractional covers may assign weights to every subset, including the empty set.\n\nThe formalized result proves Talagrand's discrete-convexity assertion with $k=2^{75}$. If a family of subsets of a finite nonempty ground set has Bernoulli-$p$ measure at least $1-1/k$, then the sets not contained in a union of $k$ members form a $p$-small family: they have a containment cover of total $p$-cost at most $1/2$. This holds for every $0<p<1$, with repeated members allowed in the union and no monotonicity assumption.\n\n## Comparator links\n\n| Result | Comparator statement |\n| --- | --- |\n| Integral–fractional expectation-threshold comparison | [TalagrandExpectationThreshold.lean](../ComparatorChallenges/TalagrandExpectationThreshold.lean) |\n| Talagrand discrete convexity | [TalagrandDiscreteConvexity.lean](../ComparatorChallenges/TalagrandDiscreteConvexity.lean) |\n"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2203.17207v2",
+      "metadata": {
+        "citation_title": [
+          "A Proof of the Kahn-Kalai Conjecture"
+        ],
+        "citation_author": [
+          "Park, Jinyoung",
+          "Pham, Huy Tuan"
+        ],
+        "citation_date": [
+          "2022/03/31"
+        ],
+        "citation_online_date": [
+          "2023/04/13"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2203.17207"
+        ],
+        "citation_arxiv_id": [
+          "2203.17207"
+        ],
+        "citation_abstract": [
+          "Proving the ``expectation-threshold'' conjecture of Kahn and Kalai, we show that for any increasing property $\\mathcal{F}$ on a finite set $X$, $$p_c(\\mathcal{F})=O(q(\\mathcal{F})\\log \\ell(\\mathcal{F})),$$ where $p_c(\\mathcal{F})$ and $q(\\mathcal{F})$ are the threshold and ``expectation threshold'' of $\\mathcal{F}$, and $\\ell(\\mathcal{F})$ is the maximum of $2$ and the maximum size of a minimal member of $\\mathcal{F}$."
+        ],
+        "abstract": "Abstract: Proving the ``expectation-threshold'' conjecture of Kahn and Kalai, we show that for any increasing property $\\mathcal{F}$ on a finite set $X$, $$p_c(\\mathcal{F})=O(q(\\mathcal{F})\\log \\ell(\\mathcal{F})),$$ where $p_c(\\mathcal{F})$ and $q(\\mathcal{F})$ are the threshold and ``expectation threshold'' of $\\mathcal{F}$, and $\\ell(\\mathcal{F})$ is the maximum of $2$ and the maximum size of a minimal member of $\\mathcal{F}$."
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2204.10309v2",
+      "metadata": {
+        "citation_title": [
+          "On a conjecture of Talagrand on selector processes and a consequence on positive empirical processes"
+        ],
+        "citation_author": [
+          "Park, Jinyoung",
+          "Pham, Huy Tuan"
+        ],
+        "citation_date": [
+          "2022/04/21"
+        ],
+        "citation_online_date": [
+          "2024/01/22"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2204.10309"
+        ],
+        "citation_arxiv_id": [
+          "2204.10309"
+        ],
+        "citation_abstract": [
+          "For appropriate Gaussian processes, as a corollary of the majorizing measure theorem, Michel Talagrand (1987) proved that the event that the supremum is significantly larger than its expectation can be covered by a set of half-spaces whose sum of measures is small. We prove a conjecture of Talagrand that is the analog of this result in the Bernoulli-$p$ setting, and answer a question of Talagrand on the analogous result for general positive empirical processes."
+        ],
+        "comments": "Final version, 22 pages",
+        "abstract": "Abstract: For appropriate Gaussian processes, as a corollary of the majorizing measure theorem, Michel Talagrand (1987) proved that the event that the supremum is significantly larger than its expectation can be covered by a set of half-spaces whose sum of measures is small. We prove a conjecture of Talagrand that is the analog of this result in the Bernoulli-$p$ setting, and answer a question of Talagrand on the analogous result for general positive empirical processes."
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2212.14636v3",
+      "metadata": {
+        "citation_title": [
+          "The suprema of selector processes with the application to positive infinitely divisible processes"
+        ],
+        "citation_author": [
+          "Bednorz, Witold",
+          "Martynek, Rafał",
+          "Meller, Rafał"
+        ],
+        "citation_date": [
+          "2022/12/30"
+        ],
+        "citation_online_date": [
+          "2026/01/22"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2212.14636"
+        ],
+        "citation_arxiv_id": [
+          "2212.14636"
+        ],
+        "citation_abstract": [
+          "We provide an alternative proof of the recent result by Park and Pham (2022) on the expected suprema of positive selector and empirical processes. We extend it to positive infinitely divisible processes."
+        ],
+        "comments": "30 pages",
+        "abstract": "Abstract: We provide an alternative proof of the recent result by Park and Pham (2022) on the expected suprema of positive selector and empirical processes. We extend it to positive infinitely divisible processes."
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.08967v1",
+      "metadata": {
+        "citation_title": [
+          "On $p$-Spread Measures"
+        ],
+        "citation_author": [
+          "Li, Chen"
+        ],
+        "citation_date": [
+          "2026/09/08"
+        ],
+        "citation_online_date": [
+          "2026/09/08"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2609.08967"
+        ],
+        "citation_arxiv_id": [
+          "2609.08967"
+        ],
+        "citation_abstract": [
+          "We study $p$-spread probability measures on the Boolean lattice. We show that if a set family is large under the product Bernoulli-$p$ measure, then no $p$-spread measure can be supported on the family of sets not covered by the union of two of its members, answering the fractional version of Talagrand's discrete convexity problem. Consequently, we establish two comparison theorems between $p$-spread and product Bernoulli-$p$ measures."
+        ],
+        "abstract": "Abstract: We study $p$-spread probability measures on the Boolean lattice. We show that if a set family is large under the product Bernoulli-$p$ measure, then no $p$-spread measure can be supported on the family of sets not covered by the union of two of its members, answering the fractional version of Talagrand's discrete convexity problem. Consequently, we establish two comparison theorems between $p$-spread and product Bernoulli-$p$ measures."
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.18458v1",
+      "metadata": {
+        "citation_title": [
+          "A Note on a Result of Chen Li"
+        ],
+        "citation_author": [
+          "Fang, Xuan",
+          "Wang, Tianyu"
+        ],
+        "citation_date": [
+          "2026/09/16"
+        ],
+        "citation_online_date": [
+          "2026/09/16"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2609.18458"
+        ],
+        "citation_arxiv_id": [
+          "2609.18458"
+        ],
+        "citation_abstract": [
+          "Recently, C. Li posted a preprint that resolves the fractional version of Talagrand's discrete convexity problem. In this note, we use the method of C. Li to answer another problem of Talagrand."
+        ],
+        "abstract": "Abstract: Recently, C. Li posted a preprint that resolves the fractional version of Talagrand's discrete convexity problem. In this note, we use the method of C. Li to answer another problem of Talagrand."
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.33644v1",
+      "metadata": {
+        "citation_title": [
+          "AI's solution of Conjecture 9.1"
+        ],
+        "citation_author": [
+          "Park, Jinyoung",
+          "Talagrand, Michel"
+        ],
+        "citation_date": [
+          "2026/09/27"
+        ],
+        "citation_online_date": [
+          "2026/09/27"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2609.33644"
+        ],
+        "citation_arxiv_id": [
+          "2609.33644"
+        ],
+        "citation_abstract": [
+          "In an earlier paper, M. Talagrand made a number of daring conjectures. An AI model provided a very beautiful proof of one of them which we explain here."
+        ],
+        "comments": "The proofs presented in this document were generated entirely by the AI model GPT-6 Astra, and none of the authors claim any credit for them. This write-up is written solely as a service to the research community and is not intended for journal publication",
+        "abstract": "Abstract: In an earlier paper, M. Talagrand made a number of daring conjectures. An AI model provided a very beautiful proof of one of them which we explain here."
+      }
+    },
+    {
+      "url": "https://api.crossref.org/works/10.1090/jams/1028",
+      "metadata": {
+        "title": [
+          "A proof of the Kahn–Kalai conjecture"
+        ],
+        "author": [
+          {
+            "given": "Jinyoung",
+            "family": "Park",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Huy",
+            "family": "Pham",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of the American Mathematical Society"
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2023,
+              8,
+              7
+            ]
+          ]
+        },
+        "volume": "37",
+        "issue": "1",
+        "page": "235-243",
+        "DOI": "10.1090/jams/1028"
+      }
+    },
+    {
+      "url": "https://api.crossref.org/works/10.4007/annals.2024.199.3.6",
+      "metadata": {
+        "title": [
+          "On a conjecture of Talagrand on selector processes and a consequence on positive empirical processes"
+        ],
+        "author": [
+          {
+            "given": "Jinyoung",
+            "family": "Park",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Courant Institute of Mathematical Sciences, New York University, New York, NY"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Huy Tuan",
+            "family": "Pham",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Stanford University, Stanford, CA"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Annals of Mathematics"
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2024,
+              5,
+              1
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              5,
+              1
+            ]
+          ]
+        },
+        "volume": "199",
+        "issue": "3",
+        "page": "1293-1321",
+        "DOI": "10.4007/annals.2024.199.3.6"
+      }
+    },
+    {
+      "url": "https://api.crossref.org/works/10.37236/12266",
+      "metadata": {
+        "title": [
+          "A Short Proof of Kahn-Kalai Conjecture"
+        ],
+        "author": [
+          {
+            "given": "Phuc",
+            "family": "Tran",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Van",
+            "family": "Vu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Electronic Journal of Combinatorics"
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2024,
+              7,
+              12
+            ]
+          ]
+        },
+        "volume": "31",
+        "issue": "3",
+        "DOI": "10.37236/12266"
+      }
+    },
+    {
+      "url": "https://api.crossref.org/works?query.title=Are%20many%20small%20sets%20explicitly%20small&rows=1",
+      "metadata": {
+        "title": [
+          "Are many small sets explicitly small?"
+        ],
+        "author": [
+          {
+            "given": "Michel",
+            "family": "Talagrand",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Université Pierre et Marie Curie, 75230 Paris, France"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of the forty-second ACM symposium on Theory of computing"
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2010,
+              6,
+              5
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              6,
+              5
+            ]
+          ]
+        },
+        "page": "13-36",
+        "DOI": "10.1145/1806689.1806693"
+      }
+    },
+    {
+      "url": "https://api.crossref.org/works?query.title=Thresholds%20and%20expectation%20thresholds&rows=1",
+      "metadata": {
+        "title": [
+          "Thresholds and Expectation Thresholds"
+        ],
+        "author": [
+          {
+            "given": "JEFF",
+            "family": "KAHN",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "GIL",
+            "family": "KALAI",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Combinatorics, Probability and Computing"
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2007,
+              5
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              5
+            ]
+          ]
+        },
+        "volume": "16",
+        "issue": "3",
+        "page": "495-502",
+        "DOI": "10.1017/s0963548307008474"
+      }
+    }
+  ]
+}

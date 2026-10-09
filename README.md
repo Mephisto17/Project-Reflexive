@@ -1,151 +1,128 @@
-# Project Reflexive — Talagrand Lean Verifications
+# Project Reflexive
 
-This repository collects Lean formalizations and verification artifacts for Talagrand-related theorems and conjectures. Each result lives in an independent project directory with its sources, dependency pins, mathematical scope, and verification records.
+**Follow the idea. Trust the proof.**
 
-[Read the project vision](PROJECT.md): an interactive, visual, and directly checkable experience for researchers, learners, and the wider public.
+[English](#a-way-into-mathematics) · [中文](#中文介绍) · [Collections](#projects) · [Run the page](#run-the-page-locally) · [Verify](#reproduce-the-projects)
+
+## A way into mathematics
+
+Project Reflexive is a bilingual English–Chinese project page and a collection of Lean formalizations for research mathematics. It is designed for a hybrid audience:
+
+- a mathematician can move from a result to its exact Lean declaration, source, dependency record, and reproducible check;
+- a student or curious reader can begin with an experiment, illustration, or proof map and build intuition before reading the formal source.
+
+The same theorem should support both journeys. Explanations, diagrams, simulations, and historical notes remain connected to the formal statement and its evidence.
+
+For mathematicians who accept Lean’s foundations and the documented hypotheses, a kernel-checked proof can provide a reliable logical basis for using a formal statement. This lets mathematical attention focus on what the statement means, whether it matches the intended claim, and whether it applies to a new problem.
+
+For everyone else, a theorem can begin as a question worth asking. A graph makes the roles of lemmas and theorems visible. An experiment offers a concrete intuition. A short explanation connects that intuition to the exact result, with the formal source always within reach.
+
+## The experience
+
+- **English and Chinese:** switch the whole interface, including explanations, controls, history, and bibliography notes.
+- **A map of proofs:** select lemmas, corollaries, and theorems to understand their role and follow their source dependencies. Direct arrows and paths with omitted intermediate steps have distinct labels.
+- **Choose your depth:** move between ordinary-language intuition and precise hypotheses, formulas, and Lean declarations.
+- **Explore by question:** search four formalization collections or browse thresholds, covering, and convexity.
+- **Learn by interaction:** vary a Bernoulli probability and compare sampled subsets with the exact probability in a small finite example.
+- **Keep the history visible:** each collection includes mathematical authors, proof routes, publication or preprint information, formalization credit, and source links.
+
+The working page is [`index.html`](index.html). Its proof map is a curated six-node example from the smallness/discrete-convexity development, not a complete map of every proof in the repository. The probability lab is explicitly an illustration, not a proof of any general threshold theorem. Read the longer [project vision](PROJECT.md) for the direction beyond this first interface.
 
 ## Projects
 
-### Kahn–Kalai conjecture
+| Collection | Mathematical focus | Start here |
+|---|---|---|
+| Kahn-Kalai Conjecture (Park-Pham Theorem) | Expectation thresholds and random containment | [`Kahn-Kalai/README.md`](Kahn-Kalai/README.md) |
+| Talagrand / Park–Pham 5.7 | Selector processes and small covers | [`talagrand-conjecture-5-7/README.md`](talagrand-conjecture-5-7/README.md) |
+| Talagrand’s five conjectures | Thinning, spread, Walsh identities, and fractional covers | [`talagrand-five-conjectures/README.md`](talagrand-five-conjectures/README.md) |
+| Talagrand expectation thresholds and discrete convexity | Integral–fractional comparison and same-density union smallness | [`small-vs-weakly-small-and-discrete-convexity/README.md`](small-vs-weakly-small-and-discrete-convexity/README.md) |
 
-The complete project is in **[Kahn-Kalai/](Kahn-Kalai/)**.
+### Kahn-Kalai Conjecture (Park-Pham Theorem): from an estimate to a threshold
 
-- [Project README and exact scope](Kahn-Kalai/README.md)
-- [KahnKalaiVerified.lean](Kahn-Kalai/KahnKalaiVerified.lean): standalone source, apart from mathlib.
-- [Paper.lean](Kahn-Kalai/Paper.lean): paper-specific statements and bridges.
-- [KahnKalai/](Kahn-Kalai/KahnKalai/): modular source files.
-- [verification/](Kahn-Kalai/verification/): supplied build logs, axiom reports, and checksums.
-- [LICENSE](Kahn-Kalai/LICENSE): Apache-2.0 license text.
+Jeff Kahn and Gil Kalai proposed the expectation-threshold conjecture in [*Thresholds and Expectation Thresholds*](https://doi.org/10.1017/S0963548307008474), *Combinatorics, Probability and Computing* 16(3), 495–502 (2007). Jinyoung Park and Huy Tuan Pham announced a proof in 2022; [*A Proof of the Kahn–Kalai Conjecture*](https://doi.org/10.1090/jams/1028) appeared in *JAMS* 37(1), 235–243 (2024).
 
-The quantitative bound is proved through the Tran–Vu route, using Dan Clemens Posch's upstream formalization. Several Park–Pham proof steps are also formalized; the complete original randomized Park–Pham argument is not transcribed line by line. See the project README for the precise statements, attribution, and limitations.
+This project proves `p_c(F) ≤ 100000 · q(F) · log₂ ℓ(F)`, with **integral** expectation threshold q. Its complete proof follows Phuc Tran and Van Vu’s [short inductive proof](https://doi.org/10.37236/12266), *Electronic Journal of Combinatorics* 31(3), P3.2 (2024), using [Dan Clemens Posch’s existing Lean formalization](https://github.com/dcposch/kahn-kalai-lean/tree/641aa75f8e873d31442f2f7c317b2e7582a26d94). Selected Park–Pham steps and definition bridges are also formalized; the entire original randomized argument is not transcribed line by line.
 
-### Talagrand / Park–Pham Conjecture 5.7
+### Talagrand / Park–Pham 5.7: explaining large outcomes
 
-The complete project is in **[talagrand-conjecture-5-7/](talagrand-conjecture-5-7/)**. It formalizes the corrected positive-finite-expectation version of Conjecture 5.7 with the explicit constant L = 2048.
+The question appears in Jinyoung Park and Huy Tuan Pham’s [selector-process paper](https://doi.org/10.4007/annals.2024.199.3.6), *Annals of Mathematics* 199(3), 1293–1321 (2024), first posted in 2022. The development adapts the witness method in the alternative proof by Witold Bednorz, Rafał Martynek, and Rafał Meller, [arXiv:2212.14636v3](https://arxiv.org/abs/2212.14636v3).
 
-- [Project README and exact hypotheses](talagrand-conjecture-5-7/README.md)
-- [TalagrandConjecture57.lean](talagrand-conjecture-5-7/TalagrandConjecture57.lean): standalone theorem file.
-- [TalagrandSelector/](talagrand-conjecture-5-7/TalagrandSelector/): modular development.
-- [verification/](talagrand-conjecture-5-7/verification/): supplied build logs, axiom reports, results, and source hashes.
+The repository proves the **corrected positive-finite-expectation** version of Conjecture 5.7 with `L = 2048`. Its assumptions are a finite ground set, `0 < p < 1`, nonnegative weights, and `0 < E < ∞`. Weight collections may be infinite; attaining the supremum is not assumed. The printed conjecture and the exact corrected interface are distinguished in the [project scope](talagrand-conjecture-5-7/README.md).
 
-The public theorem assumes a finite ground set, 0 < p < 1, nonnegative weights, and positive finite extended expectation. The weight collection may be infinite; attainment of the supremum is not assumed.
+### Five Talagrand conjectures: a landscape of connections
 
-### Talagrand's five conjectures
+The original questions come from Michel Talagrand’s [*Are many small sets explicitly small?*](https://doi.org/10.1145/1806689.1806693), STOC 2010, 13–36. This collection formalizes the intended statements of Conjectures 9.1, 7.12, 7.9, 7.3, and 7.2, with supporting results and explicit convention corrections.
 
-The third project is [talagrand-five-conjectures/](talagrand-five-conjectures/). It contains complete Lean proofs for five Talagrand conjectures, together with supporting results by Li, Fang–Wang, and Park–Talagrand.
+Its proof routes include Chen Li’s [*On p-Spread Measures*](https://arxiv.org/abs/2609.08967v1) and Xuan Fang and Tianyu Wang’s [*A Note on a Result of Chen Li*](https://arxiv.org/abs/2609.18458v1), both September 2026 preprints. The 9.1/7.12/7.3 route follows Jinyoung Park and Michel Talagrand’s [*AI’s solution of Conjecture 9.1*](https://arxiv.org/abs/2609.33644v1). That note credits GPT-6 Astra with generating its proofs, says the authors claim no proof credit, and is not intended for journal publication. These are preprints, not asserted journal publications.
 
-- [Project README and conjecture scope](talagrand-five-conjectures/README.md)
-- [TalagrandFiveConjectures.lean](talagrand-five-conjectures/TalagrandFiveConjectures.lean): standalone source.
-- [TalagrandConjectures/](talagrand-five-conjectures/TalagrandConjectures/): modular proofs.
-- [verification/](talagrand-five-conjectures/verification/): build, axiom, result, source, and article records.
+The public constants include `(√5 − 1)/2` for 7.9 and `q = 3` for the original cost-1/2 formulation of 7.2. The [collection README](talagrand-five-conjectures/README.md) records the corrected logarithmic sign, numbering differences, and exact scope.
 
-The project records the exact interpretation of Conjectures 9.1, 7.12, 7.9, 7.3, and 7.2 in its own README. Its theorem and supporting-result names are preserved as Lean declarations; the supplied verification reports document the proof dependencies.
+### Smallness and discrete convexity: OpenAI’s new results
 
-### Small versus weakly small, and Talagrand's discrete-convexity conjecture
+OpenAI publicly released these two results in [*Sharing AI progress in mathematics*](https://openai.com/index/sharing-ai-progress-in-mathematics/) on **October 6, 2026**. Its [Math catalogue](https://github.com/openai/math/blob/main/CONTENTS.md) groups them in result family **175**, “Talagrand’s expectation thresholds, discrete convexity, and graph decompositions.” The companion preprints, dated **September 23, 2026**, list **OpenAI** as their author:
 
-The project is in **[small-vs-weakly-small-and-discrete-convexity/](small-vs-weakly-small-and-discrete-convexity/)**. It groups the two related results in one independent Lean project, with the shared dependencies needed by their proofs.
+- [*Integral and fractional expectation thresholds are equivalent*](https://github.com/openai/math/blob/main/preprints/Integral-and-fractional-expectation-thresholds-are-equivalent-September-23-2026/paper.pdf), with [citation instructions](https://github.com/openai/math/blob/main/preprints/Integral-and-fractional-expectation-thresholds-are-equivalent-September-23-2026/README.md).
+- [*Talagrand’s discrete-convexity conjecture*](https://github.com/openai/math/blob/main/preprints/Talagrands-discrete-convexity-conjecture-September-23-2026/paper.pdf), with [citation instructions](https://github.com/openai/math/blob/main/preprints/Talagrands-discrete-convexity-conjecture-September-23-2026/README.md).
 
-- [Project README: statements and proof scope](small-vs-weakly-small-and-discrete-convexity/README.md)
-- [Standalone Lean verification](small-vs-weakly-small-and-discrete-convexity/Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean)
-- [TalagrandIntegral modules](small-vs-weakly-small-and-discrete-convexity/TalagrandIntegral/)
-- [Supporting fractional-certificate modules](small-vs-weakly-small-and-discrete-convexity/TalagrandConjectures/)
-- [Verification logs, axiom reports, source profile, and SHA-256 checksums](small-vs-weakly-small-and-discrete-convexity/verification/)
+They are **OpenAI Math Release preprints published on GitHub**; no journal publication is asserted. OpenAI also provides a [Lean scope note for family 175](https://github.com/openai/math/blob/main/lean/docs/175.md).
 
-The main declarations are `TalagrandIntegral.comparison_theorem_1_1` (comparison constant `25 * 512^4`) and `TalagrandIntegral.discrete_convexity_theorem_1_1` (`k = 2^75`). The package also contains the budget-preserving rounding result, threshold-maximizer statements, and two-union corollary. The discrete-convexity proof uses the comparison theorem, Li's fractional certificate, and finite probability couplings. Its README identifies the original paper arguments that are not formalized.
+The local comparison theorem uses `25 · 512⁴` and applies to finite families excluding the empty set. The discrete-convexity theorem uses `k = 2⁷⁵` and `0 < p < 1`. Both keep cover cost at most `1/2`. The local discrete-convexity proof takes an alternative route through comparison, Chen Li’s fractional certificate, and finite couplings; the paper’s separate hypergraph-covering lemma and signed 32-row kernel are not formalized here. This repository covers the two linked theorems, not the additional graph-decomposition application in the wider release family.
 
-The project pins Lean 4.32.0 and mathlib commit `81a5d257c8e410db227a6665ed08f64fea08e997`. The original filenames, including `Convexty` in the supplied standalone filename, are preserved so the build scripts and checksum manifest stay consistent. The supplied logs are retained unchanged; adding this project to the repository is not a fresh Lean compilation.
+## Run the page locally
 
-## Repository layout
+Requires **Node.js 20+**. No package installation is needed to run this static site.
 
-```text
-Project-Reflexive/
-├── README.md
-├── PROJECT.md
-├── Kahn-Kalai/
-│   ├── KahnKalai/, verification/
-│   └── Lean sources, project README, license, and Lake configuration
-├── talagrand-conjecture-5-7/
-│   ├── TalagrandSelector/, verification/, scripts/
-│   └── TalagrandConjecture57.lean and project configuration
-├── talagrand-five-conjectures/
-│   ├── TalagrandConjectures/, verification/, scripts/
-│   └── TalagrandFiveConjectures.lean and project configuration
-└── small-vs-weakly-small-and-discrete-convexity/
-    ├── README.md
-    ├── Small-vs-Weakly-Small-and-Talagrand-Discrete-Convexty-Conjecture.lean
-    ├── TalagrandIntegral.lean
-    ├── TalagrandIntegral/, TalagrandConjectures/
-    ├── verification/, scripts/
-    └── lakefile.toml, lake-manifest.json, lean-toolchain
+```sh
+npm run dev
 ```
 
-There is no shared Lake project at the repository root. Keep each result's dependencies and audit records within its own directory. The internal directory `Kahn-Kalai/KahnKalai/` retains the Lean module name `KahnKalai`, so existing `import KahnKalai...` declarations still work within that project.
+Open [http://localhost:5173](http://localhost:5173). Use `npm run build` to create `dist/` for a static host, and `npm run preview` to preview that build. The paths are relative so the build can also be hosted below a repository subpath.
+
+The page uses plain HTML, CSS, and JavaScript. Bilingual copy, theorem details, credits, and references live in [`web/data.js`](web/data.js). The exact eight-point probability calculation is in [`web/math.js`](web/math.js).
+
+## Read the evidence carefully
+
+The supplied `verification/` directories contain build logs, Lean versions, axiom reports, source hashes, and result records. A successful Lean check establishes the formal statement under its recorded assumptions. It does not, by itself, establish that an informal paper and a formal declaration have identical scope; that correspondence still deserves mathematical review.
+
+The repository keeps mathematical discovery, exposition, formalization, and verification credit separate. The project page adds history and bibliography notes for each collection so readers can see who posed a question, who proved it, which route was formalized, where a result was published or released, and what remains outside the formal scope.
+
+## Checks
+
+```sh
+npm test
+npm run build
+```
+
+`npm test` checks the exact probability calculation used by the playground. `python scripts/check_site.py` runs the browser smoke test when Playwright Chromium is installed and `npm run dev` is running. Lean reproduction commands are collected in [`PROJECT.md`](PROJECT.md#reproduce-the-projects).
 
 ## Reproduce the projects
 
-Install Lean/Elan and Git. Each project's `lean-toolchain`, `lakefile.toml`, and `lake-manifest.json` pin its environment. Run the following blocks separately from the repository root.
+Install Lean/Elan and Git. Each independent project pins its own toolchain and dependencies; there is no root Lake project. See the [complete reproduction commands](PROJECT.md#reproduce-the-projects) or the individual collection READMEs. Run a modular library and its standalone version separately; they intentionally declare the same names.
 
-Kahn–Kalai (Bash, including Git Bash or WSL on Windows; Python 3 is also used by the audit script):
-
-```sh
-cd Kahn-Kalai
-lake exe cache get
-bash verify.sh
-```
-
-Conjecture 5.7:
-
-```sh
-cd talagrand-conjecture-5-7
-lake exe cache get
-lake build
-lake env lean Audit.lean
-lake env lean TalagrandConjecture57.lean
-```
-
-Five conjectures:
-
-~~~sh
-cd talagrand-five-conjectures
-lake exe cache get
-lake build
-lake env lean Audit.lean
-lake env lean TalagrandFiveConjectures.lean
-~~~
-
-Small versus weakly small and discrete convexity (Python 3 and a POSIX shell are required):
-
-```sh
-cd small-vs-weakly-small-and-discrete-convexity
-lake exe cache get Mathlib.Tactic Mathlib.Analysis.MeanInequalities Mathlib.Analysis.SpecialFunctions.Pow.Real Mathlib.Analysis.SpecialFunctions.Log.Basic Mathlib.Topology.Order.Compact Mathlib.Data.Fintype.Perm Mathlib.Analysis.SpecificLimits.Normed Mathlib.Analysis.Complex.ExponentialBounds
-sh scripts/verify.sh
-```
-
-The standalone file and modular library in each project define the same names. Check them separately rather than importing both into one Lean file. The records under `verification/` are supplied build evidence; rerun the checks after editing proofs. The directory migration itself does not constitute a fresh Lean compilation.
-
-## Path migration and existing links
-
-All former root-level Kahn–Kalai project files and the old `KahnKalai/` and `verification/` directories now live under `Kahn-Kalai/`. The collection README remains here; the original Kahn–Kalai README is restored at [Kahn-Kalai/README.md](Kahn-Kalai/README.md).
-
-See the **[complete old-to-new path map](Kahn-Kalai/MIGRATION.md)** for updated file links and a permanent link to the pre-migration snapshot. GitHub does not provide repository-controlled redirects for arbitrary moved file URLs. Update bookmarks or external references that use old `main` paths; links pinned to old commit IDs remain available through Git history.
-
-## Add a future result
-
-Create one top-level directory per theorem or conjecture. Include its own README, Lean sources, Lake configuration, toolchain pin, verification records, and applicable license/attribution information. Then add it to the project list above.
-
-```sh
-git clone https://github.com/Mephisto17/Project-Reflexive.git
-cd Project-Reflexive
-mkdir talagrand-new-result
-# Add the complete project under talagrand-new-result/.
-# Update this README with links and reproduction commands.
-git add talagrand-new-result README.md
-git commit -m "Add Talagrand new result"
-git push
-```
-
-If already cloned, pull the latest changes before adding a result. In the GitHub web interface, open the target project directory before choosing **Add file → Upload files**, and preserve nested directories when uploading modules and reports.
+The supplied logs report Lean **4.32.0**, with transitive axioms limited to `propext`, `Classical.choice`, and `Quot.sound`. Changing source or dependency pins requires a fresh build and audit. Website checks do not recompile the Lean projects.
 
 ## Licenses and attribution
 
-The Kahn–Kalai license and upstream attribution are kept with that project in [Kahn-Kalai/LICENSE](Kahn-Kalai/LICENSE) and [Kahn-Kalai/README.md](Kahn-Kalai/README.md). Relocating that license does not change any existing license terms. Preserve all applicable licenses and copyright notices when adding future results, and record mathematical sources, code sources, exact revisions, theorem scope, and audited axioms in each project's documentation.
+Mathematical discovery, exposition, and Lean formalization are separate contributions. Preserve original authors, upstream sources, exact revisions, and applicable licences. The Kahn–Kalai upstream files and Apache-2.0 licence remain in [`Kahn-Kalai/LICENSE`](Kahn-Kalai/LICENSE). OpenAI’s release has its own [licence](https://github.com/openai/math/blob/main/LICENSE) and manuscript citation instructions.
+
+The original root-level Kahn–Kalai files were moved under `Kahn-Kalai/`; the [migration map](Kahn-Kalai/MIGRATION.md) records old and new paths. Existing links pinned to old commits remain available through Git history.
+
+## Contribute
+
+Review a statement, formalize a lemma, improve a visualization, translate an explanation, add a citation, or make the interface more accessible. Keep original mathematical credit, formalization credit, licences, source revisions, and verification limits visible whenever you add or reuse a result.
+
+## 中文介绍
+
+**看见数学的思路，信任严谨的证明。**
+
+Project Reflexive 是一个中英双语的数学项目，结合 **Lean 形式化证明、易懂的图解、交互实验，以及引理和定理之间的关系图谱**。我们希望数学家与普通读者，都能从同一份数学成果中找到适合自己的入口。
+
+对于接受 Lean 基础与已记录假设的数学家，经过内核检查的形式化证明提供可依赖的逻辑依据。读者可以直接查看精确命题、假设、证明源码、公理依赖与可复现的验证环境，把注意力放在数学含义、适用条件和新的研究问题上。
+
+对于学生与公众，一个问题可以从一幅图、一个例子或一个小实验开始。点击证明图谱中的节点，了解引理的作用，以及它如何支撑更大的定理；需要时，再切换到形式化视角。界面上的 **EN / 中文** 开关会同时切换解释、控制项、历史与文献说明。
+
+当前包含四个成果集：Kahn–Kalai 猜想（Park–Pham 定理）、Talagrand / Park–Pham 猜想 5.7、Talagrand 的五个猜想，以及小性与离散凸性。小性与离散凸性这两项关联定理来自 **OpenAI 于 2026 年 10 月 6 日公开的 Math Release 第 175 族**；两份预印本日期为 9 月 23 日，作者标注为 OpenAI，发布渠道为 GitHub 预印本，而非已确认的期刊论文。原始数学贡献、后续证明路线、Lean 形式化与本项目的阐述分别注明。
+
+在仓库根目录运行 `npm run dev`，打开 [http://localhost:5173](http://localhost:5173) 即可浏览。页面已包含精选证明图谱、四个成果集的历史与参考文献，以及八点随机子集实验。图谱不是全仓库的完整依赖提取，实验也不构成一般性定理的证明。
+
+各成果目录中的 `verification/` 保留所供构建记录。Lean 验证确立的是形式化命题在其假设下的逻辑正确性；命题与论文意图之间的对应仍需数学审查。欢迎参与形式化、数学审查、科普阐述、翻译、可视化与无障碍设计。

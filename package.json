@@ -1,0 +1,15 @@
+{
+  "name": "project-reflexive",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A bilingual, interactive home for Project Reflexive's Lean formalizations.",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs --dist",
+    "test": "node --test web/*.test.mjs",
+    "blueprint": "python scripts/build_blueprint.py"
+  },
+  "engines": { "node": ">=20" }
+}
