@@ -27,6 +27,12 @@ with sync_playwright() as playwright:
     assert 'one conversation' not in page.locator('body').inner_text().lower()
     expect(page.locator('[data-i18n="stripPerspectives"]')).to_have_text('Intuition meetsformal proof')
     expect(page.locator('#detail-title')).to_have_text('Two notions of smallness, one bridge.')
+    expect(page.locator('#about-heading')).to_have_text('A readable path from idea to verified statement.')
+    expect(page.locator('.approach-grid article').nth(0)).to_contain_text('four formalization collections')
+    expect(page.locator('.approach-grid article').nth(1)).to_contain_text('interactive blueprint')
+    expect(page.locator('.approach-grid article').nth(2)).to_contain_text('local Lean source')
+    assert 'Lean blueprints' in page.locator('meta[name="description"]').get_attribute('content')
+    assert '中文介绍' not in (ROOT / 'README.md').read_text(encoding='utf-8')
     page.screenshot(path=str(ARTIFACTS / 'desktop-en.png'), full_page=True)
 
     for node in ['estimates', 'certificate', 'rounding', 'unions', 'comparison', 'convexity']:
@@ -157,6 +163,10 @@ with sync_playwright() as playwright:
     page.locator('[data-language="zh"]').click()
     expect(page.locator('html')).to_have_attribute('lang', 'zh-CN')
     expect(page.locator('#hero-title')).to_contain_text('看见数学的思路。')
+    expect(page.locator('#about-heading')).to_have_text('从想法到可验证命题，走一条清晰的路。')
+    expect(page.locator('.approach-grid article').nth(0)).to_contain_text('四个形式化成果集之一')
+    expect(page.locator('.approach-grid article').nth(1)).to_contain_text('交互式证明蓝图')
+    expect(page.locator('.approach-grid article').nth(2)).to_contain_text('本地 Lean 源码')
     expect(page.locator('[data-bp-scope="neighbors"]')).to_have_text('相邻节点')
     page.locator('#bp-source').click()
     expect(page.locator('#source-declaration')).to_have_text('当前声明')

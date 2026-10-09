@@ -2,7 +2,7 @@
 
 **Follow the idea. Trust the proof.**
 
-[English](#a-way-into-mathematics) · [中文](#中文介绍) · [Collections](#projects) · [Run the page](#run-the-page-locally) · [Verify](#reproduce-the-projects)
+[English](#a-way-into-mathematics) · [Collections](#projects) · [Run the page](#run-the-page-locally) · [Verify](#reproduce-the-projects)
 
 ## A way into mathematics
 
@@ -120,19 +120,3 @@ The original root-level Kahn–Kalai files were moved under `Kahn-Kalai/`; the [
 ## Contribute
 
 Review a statement, formalize a lemma, improve a visualization, translate an explanation, add a citation, or make the interface more accessible. Keep original mathematical credit, formalization credit, licences, source revisions, and verification limits visible whenever you add or reuse a result.
-
-## 中文介绍
-
-**看见数学的思路，信任严谨的证明。**
-
-Project Reflexive 是一个中英双语的数学项目，结合 **Lean 形式化证明、易懂的图解、交互实验，以及引理和定理之间的关系图谱**。我们希望数学家与普通读者，都能从同一份数学成果中找到适合自己的入口。
-
-对于接受 Lean 基础与已记录假设的数学家，经过内核检查的形式化证明提供可依赖的逻辑依据。读者可以直接查看精确命题、假设、证明源码、公理依赖与可复现的验证环境，把注意力放在数学含义、适用条件和新的研究问题上。
-
-对于学生与公众，一个问题可以从一幅图、一个例子或一个小实验开始。点击证明图谱中的节点，了解引理的作用，以及它如何支撑更大的定理；需要时，再切换到形式化视角。界面上的 **EN / 中文** 开关会同时切换解释、控制项、历史与文献说明。
-
-当前包含四个成果集：Kahn–Kalai 猜想（Park–Pham 定理）、Talagrand / Park–Pham 猜想 5.7、Li 的核方法解答 Talagrand 的 5 个问题，以及小性与离散凸性。小性与离散凸性这两项关联定理来自 **OpenAI 于 2026 年 10 月 6 日公开的 Math Release 第 175 族**；两份预印本日期为 9 月 23 日，作者标注为 OpenAI，发布渠道为 GitHub 预印本，而非已确认的期刊论文。原始数学贡献、后续证明路线、Lean 形式化与本项目的阐述分别注明。
-
-在仓库根目录运行 `npm run dev`，打开 [http://localhost:5173](http://localhost:5173) 即可浏览。页面已包含精选证明图谱、四个成果集的历史与参考文献，以及八点随机子集实验。图谱不是全仓库的完整依赖提取，实验也不构成一般性定理的证明。
-
-各成果目录中的 `verification/` 保留所供构建记录。Lean 验证确立的是形式化命题在其假设下的逻辑正确性；命题与论文意图之间的对应仍需数学审查。欢迎参与形式化、数学审查、科普阐述、翻译、可视化与无障碍设计。

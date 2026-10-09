@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "A bilingual, interactive home for Project Reflexive's Lean formalizations.",
+  "description": "An accessible mathematics project connecting four Lean formalization collections with interactive proof maps, source reading, and bibliography.",
   "scripts": {
     "dev": "node scripts/serve.mjs",
     "build": "node scripts/build.mjs",

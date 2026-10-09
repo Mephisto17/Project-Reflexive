@@ -2,11 +2,11 @@
 
 **Follow the idea. Trust the proof.**
 
-Project Reflexive is a bilingual, public-facing home for research mathematics. It begins with Lean formalizations of probability and combinatorics around Talagrand’s questions: threshold phenomena, small and weakly small families, selector processes, fractional covers, and discrete convexity.
+Project Reflexive is a bilingual, public-facing home for research mathematics. It connects accessible explanations, interactive proof maps, and local Lean source reading with four formalization collections around threshold phenomena, small and weakly small families, selector processes, fractional covers, and discrete convexity. One collection presents **5 questions of Talagrand via the kernel method of Li**.
 
 The project is designed for two readers at the same time. A curious reader should be able to begin with a picture, a small experiment, or a plain-language question. A mathematician should be able to move from that explanation to the exact theorem, its hypotheses, Lean declaration, source revision, axiom report, and reproducible build. These are two ways into the same mathematics.
 
-English and Chinese are first-class languages in the interface. The language switch changes the explanatory copy, labels, controls, and result notes together; it does not hide the formal names or replace the original mathematical notation.
+English and Chinese are first-class languages in the interface. The language switch changes the explanatory copy, labels, controls, history, bibliography, blueprint inspector, and source-reader controls together; it does not hide formal names or replace the original mathematical notation.
 
 ## What the project is for
 
