@@ -11,7 +11,7 @@ const chinese = {
   khintchineSummary:'精细化 Khintchine 不等式，并改进线性阈值函数一次 Fourier 权重的下界。',
   sourceNote:'题名、作者顺序和预印本状态于 2026 年 10 月 10 日依据 arXiv 核实。',educationTitle:'教育经历',current:'目前',previous:'本科阶段',
   phd:'博士阶段 · AI for Math',undergraduate:'本科阶段',institution:'复旦大学数学科学学院',
-  projectLabel:'让数学可以被探索',projectDescription:'探索数学命题、交互式证明关系图与 Lean 形式化。',projectExplore:'访问项目仓库',
+  projectLabel:'让数学可以被探索',projectDescription:'探索数学命题、交互式证明关系图与 Lean 形式化。',projectExplore:'探索项目网站',
   contactLabel:'联系方式',contactTitle:'一起交流数学。',backTop:'返回顶部'
 };
 const nodes = [...document.querySelectorAll('[data-i18n]')];
