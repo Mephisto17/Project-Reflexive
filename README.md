@@ -72,6 +72,18 @@ The local comparison theorem uses `25 · 512⁴` and applies to finite families 
 
 ## Run the page locally
 
+### Xuan Fang's personal homepage
+
+The bilingual personal homepage for **Xuan Fang (方轩)** is at [`fang-xuan/`](fang-xuan/index.html), with a portrait, Fudan University biography, research interests, education, contact information, and three arXiv preprints. It includes an English/Chinese switch and BibTeX citation copying and download. Publication metadata was checked against arXiv on October 10, 2026; the log-star comparison note retains its historical-reference status.
+
+**Personal website:** <https://mephisto17.github.io/Project-Reflexive/fang-xuan/>. The existing Project Reflexive site remains at <https://mephisto17.github.io/Project-Reflexive/>.
+
+Run the server below and visit [http://localhost:5173/fang-xuan/](http://localhost:5173/fang-xuan/). `npm run build` includes the profile at `dist/fang-xuan/`. See [`fang-xuan/README.md`](fang-xuan/README.md) for maintenance notes.
+
+The [Pages workflow](.github/workflows/pages.yml) tests and builds the website on relevant pushes to `main`, then publishes only `dist/`. The GitHub repository can remain private while the website is public. To update the homepage, edit its source files and push to `main`; deployment status is shown in the repository's Actions tab.
+
+### Development and build
+
 Requires **Node.js 20+**. No package installation is needed to run this static site.
 
 ```sh
