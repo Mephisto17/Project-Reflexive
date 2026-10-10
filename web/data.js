@@ -1,4 +1,4 @@
-export const repository = 'https://github.com/Mephisto17/Project-Reflexive';
+export const repository = 'https://github.com/Project-Reflective-Organization/Project-Reflexive';
 export const sourceRoot = `${repository}/blob/main/`;
 
 // Human-readable copy is kept together so neither language becomes a partial translation.

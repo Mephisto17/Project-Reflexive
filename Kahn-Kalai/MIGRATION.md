@@ -2,7 +2,7 @@
 
 The Kahn–Kalai project was moved into `Kahn-Kalai/` on 2026-10-02. From the repository root, enter `Kahn-Kalai/` before running Lake. Within the project, Lean module names, dependency paths, and verification paths retain their original layout.
 
-[Collection home](../README.md) · [Project README](README.md) · [Pre-migration repository snapshot](https://github.com/Mephisto17/talagrand-lean-verifications/tree/9c5ea6d3c242de6c0d853b0298a093f7df1b4444)
+[Collection home](../README.md) · [Project README](README.md) · [Pre-migration repository snapshot](https://github.com/Project-Reflective-Organization/Project-Reflexive/tree/9c5ea6d3c242de6c0d853b0298a093f7df1b4444)
 
 ## Path map
 
@@ -42,7 +42,7 @@ The repository-root [README.md](../README.md) remains the collection overview. T
 
 For current Kahn–Kalai file links, insert `Kahn-Kalai/` after `/blob/main/`. For directory links, insert it after `/tree/main/`. For raw links, add the same directory after the branch name, for example `/raw/refs/heads/main/Kahn-Kalai/…` on GitHub or `/main/Kahn-Kalai/…` on raw.githubusercontent.com. Root README links remain links to the collection overview; use `Kahn-Kalai/README.md` for the theorem documentation.
 
-GitHub does not offer repository-controlled redirects for moved file URLs. An old `main` path can return 404; external bookmarks must use the new path. Existing commit-pinned links keep their historical meaning. To access a file at its old path, replace `main` with the pre-migration commit `9c5ea6d3c242de6c0d853b0298a093f7df1b4444`, for example this [historical Audit.lean](https://github.com/Mephisto17/talagrand-lean-verifications/blob/9c5ea6d3c242de6c0d853b0298a093f7df1b4444/Audit.lean).
+GitHub does not offer repository-controlled redirects for moved file URLs. An old `main` path can return 404; external bookmarks must use the new path. Existing commit-pinned links keep their historical meaning. To access a file at its old path, replace `main` with the pre-migration commit `9c5ea6d3c242de6c0d853b0298a093f7df1b4444`, for example this [historical Audit.lean](https://github.com/Project-Reflective-Organization/Project-Reflexive/blob/9c5ea6d3c242de6c0d853b0298a093f7df1b4444/Audit.lean).
 
 From the repository root:
 
