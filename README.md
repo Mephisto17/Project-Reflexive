@@ -2,13 +2,13 @@
 
 **Follow the idea. Trust the proof.**
 
-[Project website](https://project-reflective-organization.github.io/Project-Reflexive/) · [GitHub organization](https://github.com/Project-Reflective-Organization) · [Xuan Fang’s personal homepage](https://mephisto17.github.io/)
+[Project website](https://project-reflective-organization.github.io/Project-Reflexive/) · [GitHub organization](https://github.com/Project-Reflective-Organization)
 
 [English](#a-way-into-mathematics) · [Collections](#projects) · [Run the page](#run-the-page-locally) · [Verify](#reproduce-the-projects)
 
 ## A way into mathematics
 
-Project Reflexive is a bilingual English–Chinese project page and a collection of Lean formalizations for research mathematics. It is designed for a hybrid audience:
+Project Reflexive is a collection of Lean formalizations for research mathematics with interactive illustrations. It is designed for a hybrid audience:
 
 - a mathematician can move from a result to its exact Lean declaration, source, dependency record, and reproducible check;
 - a student or curious reader can begin with an experiment, illustration, or proof map and build intuition before reading the formal source.
@@ -21,7 +21,6 @@ For everyone else, a theorem can begin as a question worth asking. A graph makes
 
 ## The experience
 
-- **English and Chinese:** switch the whole interface, including explanations, controls, history, and bibliography notes.
 - **A map of proofs:** select lemmas, corollaries, and theorems to understand their role and follow their source dependencies. Direct arrows and paths with omitted intermediate steps have distinct labels.
 - **An interactive blueprint:** search declarations in all four collections; explore neighbors, all prerequisites, or the whole collection; zoom, pan, and follow references to their Lean statements.
 - **Lean source inside the page:** open a read-only source panel with syntax coloring, line numbers, a highlighted declaration, line navigation, and file copying. GitHub remains available as a secondary link.
@@ -74,18 +73,7 @@ The local comparison theorem uses `25 · 512⁴` and applies to finite families 
 
 ## Run the page locally
 
-### Personal homepage
-
-Xuan Fang's personal academic homepage is maintained separately:
-
-- Website: **https://mephisto17.github.io/**
-- Repository: [Mephisto17/Mephisto17.github.io](https://github.com/Mephisto17/Mephisto17.github.io)
-
-This research repository no longer maintains the personal biography, portrait, styles, or publication list. The small `fang-xuan/index.html` redirect is retained to guide visitors using the former project-site path.
-
 The [Pages workflow](.github/workflows/pages.yml) tests and builds the research website on relevant pushes to `main`, then publishes only `dist/`.
-
-### Development and build
 
 Requires **Node.js 20+**. No package installation is needed to run this static site.
 
@@ -95,7 +83,7 @@ npm run dev
 
 Open [http://localhost:5173](http://localhost:5173). Use `npm run build` to create `dist/` for a static host, and `npm run preview` to preview that build. The paths are relative so the build can also be hosted below a repository subpath.
 
-The page uses plain HTML, CSS, and JavaScript. Bilingual copy, theorem details, credits, and references live in [`web/data.js`](web/data.js). The exact eight-point probability calculation is in [`web/math.js`](web/math.js).
+The page uses plain HTML, CSS, and JavaScript. Copy, theorem details, credits, and references live in [`web/data.js`](web/data.js). The exact eight-point probability calculation is in [`web/math.js`](web/math.js).
 
 After editing the modular Lean sources, regenerate the blueprint and local source snapshot with Python 3:
 

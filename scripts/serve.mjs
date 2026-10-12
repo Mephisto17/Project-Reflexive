@@ -12,14 +12,10 @@ const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=
 http.createServer(async (req, res) => {
   try {
     const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
-    if (pathname === '/fang-xuan') {
-      res.writeHead(301, { Location: './fang-xuan/' }).end();
-      return;
-    }
-    const relative = pathname === '/' ? 'index.html' : pathname === '/fang-xuan/' ? 'fang-xuan/index.html' : pathname.slice(1);
+    const relative = pathname === '/' ? 'index.html' : pathname.slice(1);
     const target = path.resolve(root, relative);
     const publicPath = path.relative(root, target).split(path.sep).join('/');
-    if (!target.startsWith(root + path.sep) || (publicPath !== 'index.html' && !publicPath.startsWith('web/') && !publicPath.startsWith('fang-xuan/')) || publicPath.endsWith('.test.mjs') || publicPath.endsWith('README.md')) {
+    if (!target.startsWith(root + path.sep) || (publicPath !== 'index.html' && !publicPath.startsWith('web/')) || publicPath.endsWith('.test.mjs') || publicPath.endsWith('README.md')) {
       res.writeHead(404).end('Not found');
       return;
     }

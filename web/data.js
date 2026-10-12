@@ -1,7 +1,7 @@
 export const repository = 'https://github.com/Project-Reflective-Organization/Project-Reflexive';
 export const sourceRoot = `${repository}/blob/main/`;
 
-// Human-readable copy is kept together so neither language becomes a partial translation.
+// Human-readable copy is kept together for reviewability.
 export const messages = {
   skip: ['Skip to content', '跳至正文'],
   brandSub: ['A living map of mathematics', '让数学的脉络清晰可见'],

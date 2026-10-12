@@ -6,7 +6,6 @@ on:
     paths:
       - 'index.html'
       - 'web/**'
-      - 'fang-xuan/**'
       - 'scripts/build.mjs'
       - 'package.json'
       - '.github/workflows/pages.yml'

@@ -11,9 +11,5 @@ await cp(path.join(root, 'web'), path.join(output, 'web'), {
   recursive: true,
   filter: (source) => !source.endsWith('.test.mjs'),
 });
-await cp(path.join(root, 'fang-xuan'), path.join(output, 'fang-xuan'), {
-  recursive: true,
-  filter: (source) => !source.endsWith('README.md'),
-});
 await writeFile(path.join(output, '.nojekyll'), '');
 console.log('Built static site in dist/ — ready for any static host.');
